@@ -33,8 +33,7 @@ export default function ContactHero() {
             </div>
 
             <h1 className="contact-hero-anim text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F1520] tracking-tight leading-[1.1] font-outfit">
-              Let&apos;s Build <br />
-              Something Great <span className="text-[#E31E24]">Together.</span>
+              Contact <span className="text-[#E31E24]">Turbo Tech</span>
             </h1>
 
             <p className="contact-hero-anim text-slate-600 text-base sm:text-lg max-w-xl leading-relaxed">

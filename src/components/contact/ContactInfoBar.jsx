@@ -6,28 +6,28 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 export default function ContactInfoBar() {
   const cards = [
     {
-      title: 'Our Office',
+      title: 'Official Head Office Address',
       icon: MapPin,
       lines: [
-        'Kondli Gopal Patti, Near Brahm Sthan,',
-        'Tamkuhiya, Kushinagar,',
-        'Uttar Pradesh - 274407',
+        'Koindi Gosai Pa (Near Brahm Sthan),',
+        'Tamkuhi Raj, Kushinagar,',
+        'Uttar Pradesh – 274407, India',
       ],
     },
     {
-      title: 'Phone',
+      title: 'Phone Numbers',
       icon: Phone,
       lines: [
         '+91 63511 49073',
-        '(Mon - Sat, 9:00 AM - 6:00 PM)',
+        'Direct Engineering Helpline',
       ],
     },
     {
-      title: 'Email',
+      title: 'Email Address',
       icon: Mail,
       lines: [
         'santosh.turbotech@gmail.com',
-        'info@turbotech.com',
+        'Project Quotes & Manpower Requests',
       ],
     },
     {
@@ -35,7 +35,7 @@ export default function ContactInfoBar() {
       icon: Clock,
       lines: [
         'Monday - Saturday: 9:00 AM - 6:00 PM',
-        'Sunday - Closed',
+        'Emergency Plant Support: 24/7 Available',
       ],
     },
   ];
@@ -54,7 +54,7 @@ export default function ContactInfoBar() {
                 <div>
                   <h4 className="text-base font-bold text-[#0F1520] font-outfit mb-1">{c.title}</h4>
                   {c.lines.map((line, lIdx) => (
-                    <p key={lIdx} className="text-xs text-slate-500 leading-relaxed">
+                    <p key={lIdx} className="text-xs text-slate-600 font-medium leading-relaxed">
                       {line}
                     </p>
                   ))}

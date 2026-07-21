@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import { ArrowRight, ShieldCheck, Award, Headphones, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Award, Headphones, Sparkles } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
@@ -98,17 +98,18 @@ export default function Hero({ onOpenQuote }) {
             <div className="hero-anim">
               <span className="tag-badge">
                 <Sparkles className="w-3.5 h-3.5 text-[#E31E24]" />
-                Industrial Engineering & Infrastructure Partner
+                Industrial Engineering Company Kushinagar & UP
               </span>
             </div>
 
+            {/* Exact H1 for Homepage SEO */}
             <h1 className="hero-anim text-4xl sm:text-5xl lg:text-6xl font-black text-[#0F1520] tracking-tight leading-[1.08] font-outfit">
-              Engineering Excellence.{' '}
-              <span className="text-gradient-red block sm:inline">Built for Industry.</span>
+              Industrial Engineering Solutions <br />
+              <span className="text-gradient-red">You Can Build On</span>
             </h1>
 
             <p className="hero-anim text-slate-600 text-base sm:text-lg max-w-xl leading-relaxed">
-              Complete industrial engineering execution — mechanical construction, fabrication, piping, plant maintenance, manpower supply, civil works, and technical training.
+              As a premier <strong>industrial engineering company in Kushinagar</strong> delivering <strong>EPC solutions in UP</strong>, Turbo Tech provides turn-key mechanical construction, heavy steel fabrication, piping, plant maintenance, and certified manpower supply across Uttar Pradesh.
             </p>
 
             {/* CTAs */}
@@ -146,12 +147,12 @@ export default function Hero({ onOpenQuote }) {
               </div>
               <div className="bg-slate-50/80 backdrop-blur-sm border border-slate-200/80 p-3.5 rounded-2xl hover:border-[#E31E24]/30 hover:bg-white hover:shadow-md transition-all">
                 <div className="text-2xl sm:text-3xl font-black text-[#0F1520] font-outfit">100%</div>
-                <div className="text-xs text-slate-500 font-semibold mt-0.5">Safety & Quality</div>
+                <div className="text-xs text-slate-500 font-semibold mt-0.5">ISO 9001 Certified</div>
               </div>
             </div>
           </div>
 
-          {/* Right Hero Image Showcase with Parallax Cards */}
+          {/* Right Hero Image Showcase with Alt Text */}
           <div className="lg:col-span-5 relative">
             <div
               ref={heroImageRef}
@@ -159,7 +160,7 @@ export default function Hero({ onOpenQuote }) {
             >
               <img
                 src="/images/hero_plant.png"
-                alt="Turbo Tech Industrial Engineering Plant"
+                alt="industrial mechanical construction and plant engineering by Turbo Tech Kushinagar Uttar Pradesh"
                 className="w-full h-[460px] sm:h-[520px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-slate-950/10 to-transparent"></div>
@@ -173,8 +174,8 @@ export default function Hero({ onOpenQuote }) {
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 font-outfit">Safety First</h4>
-                    <p className="text-[11px] text-slate-500 font-medium">Zero Compromise</p>
+                    <h4 className="text-xs font-bold text-slate-900 font-outfit">Safety First Policy</h4>
+                    <p className="text-[11px] text-slate-500 font-medium">HSE Compliant Work</p>
                   </div>
                 </div>
 
@@ -184,19 +185,19 @@ export default function Hero({ onOpenQuote }) {
                     <Award className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 font-outfit">ISO Certified</h4>
-                    <p className="text-[11px] text-slate-500 font-medium">9001:2015 Management</p>
+                    <h4 className="text-xs font-bold text-slate-900 font-outfit">ISO 9001:2015</h4>
+                    <p className="text-[11px] text-slate-500 font-medium">Certified Quality</p>
                   </div>
                 </div>
 
-                {/* Card 3: 24/7 Support */}
+                {/* Card 3: Mechanical Construction Company */}
                 <div className="hero-float-card-3 glass-card p-3.5 rounded-2xl flex items-center gap-3.5 shadow-xl border border-white/80 pointer-events-auto hover:scale-105 transition-transform">
                   <div className="w-10 h-10 rounded-xl bg-[#E31E24]/10 text-[#E31E24] flex items-center justify-center shrink-0">
                     <Headphones className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 font-outfit">Turnkey Execution</h4>
-                    <p className="text-[11px] text-slate-500 font-medium">Planning to Commissioning</p>
+                    <h4 className="text-xs font-bold text-slate-900 font-outfit">EPC Execution</h4>
+                    <p className="text-[11px] text-slate-500 font-medium">Across Uttar Pradesh</p>
                   </div>
                 </div>
 

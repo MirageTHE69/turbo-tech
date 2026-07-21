@@ -29,16 +29,16 @@ export default function TrainingHero({ onOpenQuote }) {
           {/* Left Narrative */}
           <div className="lg:col-span-6 space-y-6">
             <div className="training-hero-anim">
-              <span className="tag-badge">Turbo Tech Training Institute</span>
+              <span className="tag-badge">Welding Institute Kushinagar & UP</span>
             </div>
 
             <h1 className="training-hero-anim text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F1520] tracking-tight leading-[1.1] font-outfit">
-              Shaping Skills.{' '}
-              <span className="text-[#E31E24] block sm:inline">Building Futures.</span>
+              Welding & Fitter <br />
+              <span className="text-[#E31E24]">Training Institute</span>
             </h1>
 
             <p className="training-hero-anim text-slate-600 text-base sm:text-lg max-w-xl leading-relaxed">
-              Industry-oriented technical training programs designed to empower engineers, welders, fitters, and technicians with hands-on expertise and 100% placement support.
+              Turbo Tech is a premier <strong>welding institute in Kushinagar</strong> offering job-oriented <strong>welding course UP with placement</strong> assistance, hands-on workshop experience, certified trainers, and live industrial project training.
             </p>
 
             <div className="training-hero-anim flex flex-wrap items-center gap-4 pt-2">
@@ -65,7 +65,7 @@ export default function TrainingHero({ onOpenQuote }) {
             <div className="relative w-full h-[400px] sm:h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200 group">
               <img
                 src="/images/welder.png"
-                alt="Turbo Tech Training Institute Workshop"
+                alt="welding course workshop and pipe fitter training at Turbo Tech Kushinagar Uttar Pradesh"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
 
@@ -79,11 +79,11 @@ export default function TrainingHero({ onOpenQuote }) {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none"></div>
 
               <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
-                <span className="text-xs font-bold text-[#E31E24] uppercase tracking-widest bg-white/90 px-3 py-1 rounded-full inline-flex items-center gap-1.5">
-                  <GraduationCap className="w-3.5 h-3.5" /> Technical Excellence Center
+                <span className="text-xs font-bold text-[#E31E24] uppercase tracking-widest bg-white/90 px-3 py-1 rounded-full inline-flex items-center gap-1.5 font-outfit">
+                  <GraduationCap className="w-3.5 h-3.5" /> Hands-on Workshop & Placement Support
                 </span>
                 <h4 className="text-xl font-bold font-outfit text-white pt-2">
-                  ISO 9001:2015 Certified Training Facility
+                  ISO 9001 Certified Skill Development Center
                 </h4>
               </div>
             </div>
