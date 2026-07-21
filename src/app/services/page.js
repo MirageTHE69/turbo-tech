@@ -6,14 +6,11 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import IndustriesBar from '@/components/IndustriesBar';
-import AboutSection from '@/components/AboutSection';
-import ServicesSection from '@/components/ServicesSection';
-import ProjectsSection from '@/components/ProjectsSection';
-import StatsCounter from '@/components/StatsCounter';
-import TrainingSection from '@/components/TrainingSection';
-import CtaBanner from '@/components/CtaBanner';
+import ServicesHero from '@/components/services/ServicesHero';
+import CoreServicesGrid from '@/components/services/CoreServicesGrid';
+import MechanicalCapabilities from '@/components/services/MechanicalCapabilities';
+import GuaranteesBar from '@/components/services/GuaranteesBar';
+import ServicesCta from '@/components/services/ServicesCta';
 import Footer from '@/components/Footer';
 import QuoteModal from '@/components/QuoteModal';
 
@@ -21,11 +18,10 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function Home() {
+export default function ServicesPage() {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
 
   useEffect(() => {
-    // Initialize Lenis Smooth Scroll
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -49,37 +45,27 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-[#0F1520] relative antialiased selection:bg-[#E31E24] selection:text-white">
-      {/* Header Navigation */}
       <Header onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* Hero Showcase */}
-      <Hero onOpenQuote={() => setIsQuoteOpen(true)} />
+      {/* Services Hero */}
+      <ServicesHero onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* Trusted Industries Ticker */}
-      <IndustriesBar />
+      {/* 10 Core Services Cards Grid */}
+      <CoreServicesGrid onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* About Turbo Tech */}
-      <AboutSection />
+      {/* Full Mechanical Capabilities Spectrum */}
+      <MechanicalCapabilities />
 
-      {/* 6 Services Grid */}
-      <ServicesSection />
+      {/* Guarantees Bar */}
+      <GuaranteesBar />
 
-      {/* Featured Projects Carousel */}
-      <ProjectsSection />
+      {/* CTA */}
+      <ServicesCta onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* Dynamic Counter Bar */}
-      <StatsCounter />
-
-      {/* Skill Training Institute */}
-      <TrainingSection />
-
-      {/* Call to Action Banner */}
-      <CtaBanner onOpenQuote={() => setIsQuoteOpen(true)} />
-
-      {/* Complete Footer */}
+      {/* Footer */}
       <Footer />
 
-      {/* Interactive Free Quote Modal */}
+      {/* Quote Modal */}
       <QuoteModal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
     </main>
   );

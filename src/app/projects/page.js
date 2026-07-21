@@ -6,14 +6,10 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import IndustriesBar from '@/components/IndustriesBar';
-import AboutSection from '@/components/AboutSection';
-import ServicesSection from '@/components/ServicesSection';
-import ProjectsSection from '@/components/ProjectsSection';
-import StatsCounter from '@/components/StatsCounter';
-import TrainingSection from '@/components/TrainingSection';
-import CtaBanner from '@/components/CtaBanner';
+import ProjectsHero from '@/components/projects/ProjectsHero';
+import ProjectsStats from '@/components/projects/ProjectsStats';
+import ProjectsGallery from '@/components/projects/ProjectsGallery';
+import ProjectsCta from '@/components/projects/ProjectsCta';
 import Footer from '@/components/Footer';
 import QuoteModal from '@/components/QuoteModal';
 
@@ -21,11 +17,10 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function Home() {
+export default function ProjectsPage() {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
 
   useEffect(() => {
-    // Initialize Lenis Smooth Scroll
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -49,37 +44,24 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-[#0F1520] relative antialiased selection:bg-[#E31E24] selection:text-white">
-      {/* Header Navigation */}
       <Header onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* Hero Showcase */}
-      <Hero onOpenQuote={() => setIsQuoteOpen(true)} />
+      {/* Projects Hero */}
+      <ProjectsHero onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* Trusted Industries Ticker */}
-      <IndustriesBar />
+      {/* 4-Column Impact Metrics Bar */}
+      <ProjectsStats />
 
-      {/* About Turbo Tech */}
-      <AboutSection />
+      {/* Filterable Projects Gallery & Cards */}
+      <ProjectsGallery onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* 6 Services Grid */}
-      <ServicesSection />
+      {/* Have a Project in Mind? CTA */}
+      <ProjectsCta onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* Featured Projects Carousel */}
-      <ProjectsSection />
-
-      {/* Dynamic Counter Bar */}
-      <StatsCounter />
-
-      {/* Skill Training Institute */}
-      <TrainingSection />
-
-      {/* Call to Action Banner */}
-      <CtaBanner onOpenQuote={() => setIsQuoteOpen(true)} />
-
-      {/* Complete Footer */}
+      {/* Footer */}
       <Footer />
 
-      {/* Interactive Free Quote Modal */}
+      {/* Quote Modal */}
       <QuoteModal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
     </main>
   );

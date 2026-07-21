@@ -1,0 +1,195 @@
+{
+  "services": [
+    {
+      "id": "srv-1",
+      "number": "01",
+      "title": "Mechanical Construction",
+      "desc": "Complete industrial mechanical construction including fabrication, erection, installation, alignment, and commissioning of industrial equipment.",
+      "iconName": "Wrench"
+    },
+    {
+      "id": "srv-2",
+      "number": "02",
+      "title": "Structural Fabrication & Erection",
+      "desc": "Design, fabrication, assembly, and erection of heavy industrial steel structures, process platforms, and support systems.",
+      "iconName": "Layers"
+    },
+    {
+      "id": "srv-3",
+      "number": "03",
+      "title": "Industrial Piping",
+      "desc": "Supply, fabrication, installation, hydro testing, pressure testing, and commissioning of MS, SS, CS, HDPE, and alloy process pipelines.",
+      "iconName": "GitCommit"
+    },
+    {
+      "id": "srv-4",
+      "number": "04",
+      "title": "Plant Maintenance",
+      "desc": "Preventive, shutdown, and corrective maintenance, mechanical overhauling, equipment servicing, and annual maintenance contracts.",
+      "iconName": "Settings"
+    },
+    {
+      "id": "srv-5",
+      "number": "05",
+      "title": "Equipment Installation",
+      "desc": "Installation of Pressure Vessels, Heat Exchangers, Boilers, Storage Tanks, Columns, Reactors, Rotating, and Static Equipment.",
+      "iconName": "Cpu"
+    },
+    {
+      "id": "srv-6",
+      "number": "06",
+      "title": "Shutdown Projects",
+      "desc": "Turnkey shutdown planning and execution including certified manpower, piping, equipment replacement, and fast commissioning.",
+      "iconName": "Clock"
+    },
+    {
+      "id": "srv-7",
+      "number": "07",
+      "title": "Civil Construction",
+      "desc": "Industrial civil works including foundations, heavy equipment bases, industrial buildings, trenches, and drainage infrastructure.",
+      "iconName": "Building2"
+    },
+    {
+      "id": "srv-8",
+      "number": "08",
+      "title": "Fire & Safety Solutions",
+      "desc": "Fire protection system installation, industrial safety auditing, safety equipment supply, and HSE compliance support.",
+      "iconName": "ShieldCheck"
+    },
+    {
+      "id": "srv-9",
+      "number": "09",
+      "title": "Industrial Manpower Supply",
+      "desc": "Certified Engineers, Project Managers, Supervisors, Quality & Safety Officers, Fabricators, IBR Welders, Fitters, and Riggers.",
+      "iconName": "Users"
+    },
+    {
+      "id": "srv-10",
+      "number": "10",
+      "title": "General Industrial Supply",
+      "desc": "High-grade industrial equipment, safety gear, project consumables, structural steel, and general engineering supplies.",
+      "iconName": "Box"
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "Petrochemical Plant Mechanical Execution",
+      "category": "Mechanical Construction",
+      "desc": "Turnkey mechanical construction, heavy equipment erection, and piping integration for major petrochemical expansion.",
+      "location": "Gujarat, India",
+      "duration": "18 Months",
+      "year": "2024",
+      "image": "/images/hero_plant.png"
+    },
+    {
+      "id": "proj-2",
+      "title": "Refinery Heavy Structural Fabrication",
+      "category": "Fabrication & Erection",
+      "desc": "Design, shop fabrication, and high-altitude erection of 3,500 MT structural steel platforms and pipe racks.",
+      "location": "Maharashtra, India",
+      "duration": "14 Months",
+      "year": "2023",
+      "image": "/images/welder.png"
+    },
+    {
+      "id": "proj-3",
+      "title": "High-Pressure Alloy Process Piping",
+      "category": "Industrial Piping",
+      "desc": "Supply, 100% NDT radio-tested welding, hydro-testing, and commissioning of alloy steel process lines.",
+      "location": "Gujarat, India",
+      "duration": "10 Months",
+      "year": "2023",
+      "image": "/images/project_piping.png"
+    },
+    {
+      "id": "proj-4",
+      "title": "Steel Plant Turnkey Shutdown Maintenance",
+      "category": "Shutdown & Maintenance",
+      "desc": "Overhaul of blast furnace components, pressure vessel inspection, and emergency pipe replacement within 12 days.",
+      "location": "Odisha, India",
+      "duration": "12 Days (Shutdown)",
+      "year": "2023",
+      "image": "/images/about_team.png"
+    },
+    {
+      "id": "proj-5",
+      "title": "Storage Tank Farm & Pressure Vessel Erection",
+      "category": "Equipment Installation",
+      "desc": "Site fabrication and precision installation of heavy storage tanks, heat exchangers, and column reactors.",
+      "location": "Gujarat, India",
+      "duration": "12 Months",
+      "year": "2022",
+      "image": "/images/hero_plant.png"
+    },
+    {
+      "id": "proj-6",
+      "title": "Certified Manpower Deployment - Power Project",
+      "category": "Manpower Supply",
+      "desc": "Deployment of 250+ certified IBR welders, pipe fitters, QA/QC inspectors, and safety supervisors for thermal power plant.",
+      "location": "Madhya Pradesh, India",
+      "duration": "24 Months",
+      "year": "2022",
+      "image": "/images/project_piping.png"
+    }
+  ],
+  "courses": [
+    {
+      "id": "crs-1",
+      "number": "01",
+      "title": "Industrial Welding (MIG, TIG, Arc & 6G)",
+      "badge": "Hands-On Workshop • 6G Certified",
+      "desc": "Master SMAW, GTAW, and GMAW welding techniques on plate and pipe in all positions including 6G under industry experts.",
+      "iconName": "Hammer"
+    },
+    {
+      "id": "crs-2",
+      "number": "02",
+      "title": "Pipe Fitter & Isometric Blueprint Specialist",
+      "badge": "Job-Oriented • Blueprint Reading",
+      "desc": "Isometric drawing interpretation, pipe template development, beveling, joint alignment, and precision fitting.",
+      "iconName": "Layers"
+    },
+    {
+      "id": "crs-3",
+      "number": "03",
+      "title": "Gas Cutting & Grinding Operator",
+      "badge": "Practical Workshop • Safety Focused",
+      "desc": "Oxy-acetylene cutting torch handling, plasma cutting, structural edge preparation, and industrial grinding safety.",
+      "iconName": "Wrench"
+    },
+    {
+      "id": "crs-4",
+      "number": "04",
+      "title": "Structural Steel Fabrication & Erection",
+      "badge": "Heavy Engineering • Assembly",
+      "desc": "Structural blueprint reading, beam & column layout, tack welding, truss assembly, and crane rigging alignment.",
+      "iconName": "Award"
+    },
+    {
+      "id": "crs-5",
+      "number": "05",
+      "title": "Industrial Safety & HSE Compliance",
+      "badge": "Safety Certified • OSHA Aligned",
+      "desc": "Hazard identification, risk assessment, Permit to Work (PTW) protocols, gas testing, and industrial safety management.",
+      "iconName": "ShieldCheck"
+    },
+    {
+      "id": "crs-6",
+      "number": "06",
+      "title": "Mechanical Plant Maintenance & Overhauling",
+      "badge": "Plant Maintenance • Equipment Servicing",
+      "desc": "Overhauling of centrifugal pumps, valves, heat exchangers, mechanical seals, dynamic alignment, and preventive maintenance.",
+      "iconName": "Settings"
+    }
+  ],
+  "clients": [
+    { "name": "HPCL", "sub": "Hindustan Petroleum Corporation Limited" },
+    { "name": "IOCL", "sub": "Indian Oil Corporation Limited" },
+    { "name": "MEIL", "sub": "Megha Engineering & Infrastructures Ltd" },
+    { "name": "NSCPL", "sub": "Narmada Clean Tech / Infrastructure" },
+    { "name": "ArcelorMittal Nippon Steel", "sub": "AM/NS India" },
+    { "name": "Mansi Ganga Builders & Engineers", "sub": "Industrial EPC & Infrastructure" }
+  ],
+  "leads": []
+}

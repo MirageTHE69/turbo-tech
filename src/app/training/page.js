@@ -6,14 +6,10 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import IndustriesBar from '@/components/IndustriesBar';
-import AboutSection from '@/components/AboutSection';
-import ServicesSection from '@/components/ServicesSection';
-import ProjectsSection from '@/components/ProjectsSection';
-import StatsCounter from '@/components/StatsCounter';
-import TrainingSection from '@/components/TrainingSection';
-import CtaBanner from '@/components/CtaBanner';
+import TrainingHero from '@/components/training/TrainingHero';
+import CoursesGrid from '@/components/training/CoursesGrid';
+import TrainingHighlightsBar from '@/components/training/TrainingHighlightsBar';
+import TrainingCta from '@/components/training/TrainingCta';
 import Footer from '@/components/Footer';
 import QuoteModal from '@/components/QuoteModal';
 
@@ -21,11 +17,10 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function Home() {
+export default function TrainingPage() {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
 
   useEffect(() => {
-    // Initialize Lenis Smooth Scroll
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -49,37 +44,24 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-[#0F1520] relative antialiased selection:bg-[#E31E24] selection:text-white">
-      {/* Header Navigation */}
       <Header onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* Hero Showcase */}
-      <Hero onOpenQuote={() => setIsQuoteOpen(true)} />
+      {/* Training Hero */}
+      <TrainingHero onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* Trusted Industries Ticker */}
-      <IndustriesBar />
+      {/* 6 Technical Courses Grid (01-06) */}
+      <CoursesGrid onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* About Turbo Tech */}
-      <AboutSection />
+      {/* Highlights Bar */}
+      <TrainingHighlightsBar />
 
-      {/* 6 Services Grid */}
-      <ServicesSection />
+      {/* Admission CTA */}
+      <TrainingCta onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* Featured Projects Carousel */}
-      <ProjectsSection />
-
-      {/* Dynamic Counter Bar */}
-      <StatsCounter />
-
-      {/* Skill Training Institute */}
-      <TrainingSection />
-
-      {/* Call to Action Banner */}
-      <CtaBanner onOpenQuote={() => setIsQuoteOpen(true)} />
-
-      {/* Complete Footer */}
+      {/* Footer */}
       <Footer />
 
-      {/* Interactive Free Quote Modal */}
+      {/* Admission Request Modal */}
       <QuoteModal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
     </main>
   );
