@@ -13,11 +13,12 @@ export default function ServicesCmsPage() {
     title: '',
     desc: '',
     iconName: 'Wrench',
+    image: '',
   });
 
   const handleOpenAdd = () => {
     setEditingService(null);
-    setFormSrv({ title: '', desc: '', iconName: 'Wrench' });
+    setFormSrv({ title: '', desc: '', iconName: 'Wrench', image: '' });
     setIsAddOpen(true);
   };
 
@@ -27,6 +28,7 @@ export default function ServicesCmsPage() {
       title: srv.title,
       desc: srv.desc,
       iconName: srv.iconName || 'Wrench',
+      image: srv.image || '',
     });
     setIsAddOpen(true);
   };
@@ -163,6 +165,19 @@ export default function ServicesCmsPage() {
                     </option>
                   ))}
                 </select>
+              </div>
+
+              <div>
+                <label className="block text-slate-300 font-semibold uppercase mb-1 font-outfit">
+                  Banner Image URL
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. /images/hero_plant.png"
+                  value={formSrv.image}
+                  onChange={(e) => setFormSrv({ ...formSrv, image: e.target.value })}
+                  className="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:ring-2 focus:ring-[#E31E24]"
+                />
               </div>
 
               <div>

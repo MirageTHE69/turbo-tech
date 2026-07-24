@@ -5,70 +5,80 @@
       "number": "01",
       "title": "Mechanical Construction",
       "desc": "Complete industrial mechanical construction including fabrication, erection, installation, alignment, and commissioning of industrial equipment.",
-      "iconName": "Wrench"
+      "iconName": "Wrench",
+      "image": "/images/hero_plant.png"
     },
     {
       "id": "srv-2",
       "number": "02",
       "title": "Structural Fabrication & Erection",
       "desc": "Design, fabrication, assembly, and erection of heavy industrial steel structures, process platforms, and support systems.",
-      "iconName": "Layers"
+      "iconName": "Layers",
+      "image": "/images/welder.png"
     },
     {
       "id": "srv-3",
       "number": "03",
       "title": "Industrial Piping",
       "desc": "Supply, fabrication, installation, hydro testing, pressure testing, and commissioning of MS, SS, CS, HDPE, and alloy process pipelines.",
-      "iconName": "GitCommit"
+      "iconName": "GitCommit",
+      "image": "/images/project_piping.png"
     },
     {
       "id": "srv-4",
       "number": "04",
       "title": "Plant Maintenance",
       "desc": "Preventive, shutdown, and corrective maintenance, mechanical overhauling, equipment servicing, and annual maintenance contracts.",
-      "iconName": "Settings"
+      "iconName": "Settings",
+      "image": "/images/about_team.png"
     },
     {
       "id": "srv-5",
       "number": "05",
       "title": "Equipment Installation",
       "desc": "Installation of Pressure Vessels, Heat Exchangers, Boilers, Storage Tanks, Columns, Reactors, Rotating, and Static Equipment.",
-      "iconName": "Cpu"
+      "iconName": "Cpu",
+      "image": "/images/hero_plant.png"
     },
     {
       "id": "srv-6",
       "number": "06",
       "title": "Shutdown Projects",
       "desc": "Turnkey shutdown planning and execution including certified manpower, piping, equipment replacement, and fast commissioning.",
-      "iconName": "Clock"
+      "iconName": "Clock",
+      "image": "/images/welder.png"
     },
     {
       "id": "srv-7",
       "number": "07",
       "title": "Civil Construction",
       "desc": "Industrial civil works including foundations, heavy equipment bases, industrial buildings, trenches, and drainage infrastructure.",
-      "iconName": "Building2"
+      "iconName": "Building2",
+      "image": "/images/civil_construction.png"
     },
     {
       "id": "srv-8",
       "number": "08",
       "title": "Fire & Safety Solutions",
       "desc": "Fire protection system installation, industrial safety auditing, safety equipment supply, and HSE compliance support.",
-      "iconName": "ShieldCheck"
+      "iconName": "ShieldCheck",
+      "image": "/images/fire_safety.png"
     },
     {
       "id": "srv-9",
       "number": "09",
       "title": "Industrial Manpower Supply",
       "desc": "Certified Engineers, Project Managers, Supervisors, Quality & Safety Officers, Fabricators, IBR Welders, Fitters, and Riggers.",
-      "iconName": "Users"
+      "iconName": "Users",
+      "image": "/images/about_team.png"
     },
     {
       "id": "srv-10",
       "number": "10",
       "title": "General Industrial Supply",
       "desc": "High-grade industrial equipment, safety gear, project consumables, structural steel, and general engineering supplies.",
-      "iconName": "Box"
+      "iconName": "Box",
+      "image": "/images/hero_plant.png"
     }
   ],
   "projects": [

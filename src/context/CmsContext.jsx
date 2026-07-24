@@ -5,12 +5,12 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 const CmsContext = createContext();
 
 const initialServices = [
-  { id: 'srv-1', number: '01', title: 'Mechanical Construction', desc: 'Industrial equipment installation, steel structures, fabrication and erection.', iconName: 'Wrench' },
-  { id: 'srv-2', number: '02', title: 'Fabrication & Erection', desc: 'Heavy structural fabrication and precision installation for industrial facilities.', iconName: 'Layers' },
-  { id: 'srv-3', number: '03', title: 'Industrial Piping', desc: 'Pipe fabrication, installation, hydro testing and commissioning.', iconName: 'GitCommit' },
-  { id: 'srv-4', number: '04', title: 'Plant Maintenance', desc: 'Preventive and shutdown maintenance for smooth plant operations.', iconName: 'Settings' },
-  { id: 'srv-5', number: '05', title: 'Manpower Supply', desc: 'Skilled and certified manpower including welders, fitters, engineers and technicians.', iconName: 'Users' },
-  { id: 'srv-6', number: '06', title: 'Training Institute', desc: 'Industry-oriented technical training to build skilled professionals.', iconName: 'GraduationCap' }
+  { id: 'srv-1', number: '01', title: 'Mechanical Construction', desc: 'Industrial equipment installation, steel structures, fabrication and erection.', iconName: 'Wrench', image: '/images/hero_plant.png' },
+  { id: 'srv-2', number: '02', title: 'Fabrication & Erection', desc: 'Heavy structural fabrication and precision installation for industrial facilities.', iconName: 'Layers', image: '/images/welder.png' },
+  { id: 'srv-3', number: '03', title: 'Industrial Piping', desc: 'Pipe fabrication, installation, hydro testing and commissioning.', iconName: 'GitCommit', image: '/images/project_piping.png' },
+  { id: 'srv-4', number: '04', title: 'Plant Maintenance', desc: 'Preventive and shutdown maintenance for smooth plant operations.', iconName: 'Settings', image: '/images/about_team.png' },
+  { id: 'srv-5', number: '05', title: 'Manpower Supply', desc: 'Skilled and certified manpower including welders, fitters, engineers and technicians.', iconName: 'Users', image: '/images/about_team.png' },
+  { id: 'srv-6', number: '06', title: 'Civil Construction', desc: 'Industrial civil works including foundations, heavy equipment bases, and infrastructure.', iconName: 'Building2', image: '/images/civil_construction.png' }
 ];
 
 const initialProjects = [
