@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { CheckCircle2, Wrench, Shield, Cpu } from 'lucide-react';
 
 export default function MechanicalCapabilities() {
   const capabilities = [
@@ -27,34 +26,42 @@ export default function MechanicalCapabilities() {
     'Mechanical Commissioning',
   ];
 
-  return (
-    <section className="py-20 bg-slate-900 text-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="space-y-3">
-            <span className="tag-badge text-[#E31E24] bg-slate-800 border-slate-700">Detailed Capabilities</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-outfit text-white">
-              Mechanical Engineering Execution Spectrum
-            </h2>
-          </div>
-          <p className="text-slate-400 text-sm max-w-md">
-            Turbo Tech executes specialized mechanical work for refineries, petrochemical plants, steel works, and heavy industries across India.
-          </p>
-        </div>
+  const capabilitiesDouble = [...capabilities, ...capabilities];
 
-        {/* Capabilities Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {capabilities.map((cap, idx) => (
-            <div
-              key={idx}
-              className="bg-slate-800/70 hover:bg-slate-800 border border-slate-700/70 hover:border-[#E31E24]/50 p-4 rounded-xl flex items-center gap-3 transition-all duration-200 group"
-            >
-              <div className="w-8 h-8 rounded-lg bg-slate-700 text-[#E31E24] group-hover:bg-[#E31E24] group-hover:text-white flex items-center justify-center shrink-0 transition-colors">
-                <CheckCircle2 className="w-4 h-4" />
-              </div>
-              <span className="text-xs font-bold font-outfit text-slate-200 group-hover:text-white">
+  return (
+    <section className="py-20 lg:py-28 bg-[#0B0D11] text-white border-y border-white/5 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24] mb-4">
+          Detailed Capabilities
+        </p>
+        <h2 className="text-4xl sm:text-5xl font-black font-outfit text-white leading-[1.08]">
+          Mechanical Engineering<br />Execution Spectrum.
+        </h2>
+      </div>
+
+      {/* Ticker 1 — left to right */}
+      <div className="marquee-outer mb-4">
+        <div className="marquee-track" style={{ animationDuration: '35s' }}>
+          {capabilitiesDouble.map((cap, i) => (
+            <div key={i} className="flex items-center shrink-0 mr-10">
+              <span className="text-base sm:text-lg font-bold font-outfit text-slate-300 whitespace-nowrap hover:text-[#E31E24] transition-colors cursor-default">
                 {cap}
               </span>
+              <span className="ml-10 w-1.5 h-1.5 rounded-full bg-[#E31E24]/40 shrink-0" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Ticker 2 — right to left */}
+      <div className="marquee-outer">
+        <div className="marquee-track" style={{ animationDirection: 'reverse', animationDuration: '28s' }}>
+          {capabilitiesDouble.map((cap, i) => (
+            <div key={i} className="flex items-center shrink-0 mr-10">
+              <span className="text-sm font-medium font-outfit text-slate-500 whitespace-nowrap hover:text-white transition-colors cursor-default uppercase tracking-wider">
+                {cap}
+              </span>
+              <span className="ml-10 w-1 h-1 rounded-full bg-slate-700 shrink-0" />
             </div>
           ))}
         </div>

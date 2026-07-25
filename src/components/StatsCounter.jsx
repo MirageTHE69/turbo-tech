@@ -3,7 +3,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { ShieldCheck, Award, Users, CheckCircle, Clock } from 'lucide-react';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -13,11 +12,9 @@ export default function StatsCounter() {
   const sectionRef = useRef(null);
 
   const stats = [
-    { target: 13, suffix: '+', label: 'Years Experience', icon: Clock },
-    { target: 500, suffix: '+', label: 'Projects Delivered', icon: Award },
-    { target: 300, suffix: '+', label: 'Certified Workforce', icon: Users },
-    { target: 100, suffix: '%', label: 'HSE & Safety First', icon: ShieldCheck },
-    { target: 100, suffix: '%', label: 'Quality Execution', icon: CheckCircle },
+    { target: 13, suffix: '+', label: 'Years of Industry Experience' },
+    { target: 500, suffix: '+', label: 'Projects Delivered Across India' },
+    { target: 300, suffix: '+', label: 'Certified Workforce Strong' },
   ];
 
   useEffect(() => {
@@ -30,11 +27,11 @@ export default function StatsCounter() {
 
         ScrollTrigger.create({
           trigger: sectionRef.current,
-          start: 'top 85%',
+          start: 'top 80%',
           onEnter: () => {
             gsap.to(obj, {
               val: targetVal,
-              duration: 2.2,
+              duration: 2.4,
               ease: 'power3.out',
               onUpdate: () => {
                 counter.innerText = Math.floor(obj.val);
@@ -44,37 +41,66 @@ export default function StatsCounter() {
           once: true,
         });
       });
+
+      // Section lines animate in
+      gsap.from('.stat-divider', {
+        scaleX: 0,
+        transformOrigin: 'left',
+        duration: 1,
+        stagger: 0.15,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%',
+        },
+      });
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 bg-white border-y border-slate-200/80 relative overflow-hidden bg-grid-pattern">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
-          {stats.map((stat, idx) => {
-            const IconComponent = stat.icon;
-            return (
-              <div
-                key={idx}
-                className="bg-slate-50 border border-slate-200/90 p-5 rounded-3xl text-center hover:bg-white hover:border-[#E31E24]/40 hover:shadow-xl transition-all duration-300 group"
-              >
-                <div className="w-10 h-10 rounded-2xl bg-white border border-slate-200 text-[#E31E24] flex items-center justify-center mx-auto mb-3 shadow-sm group-hover:bg-[#E31E24] group-hover:text-white transition-all duration-300">
-                  <IconComponent className="w-5 h-5" />
-                </div>
-                <div className="text-3xl sm:text-4xl font-black text-[#0F1520] font-outfit tracking-tight">
-                  <span className="stat-number" data-target={stat.target}>
-                    0
-                  </span>
-                  <span className="text-[#E31E24]">{stat.suffix}</span>
-                </div>
-                <div className="text-xs font-bold text-slate-600 uppercase tracking-wider mt-1.5 font-outfit">
-                  {stat.label}
-                </div>
+    <section
+      ref={sectionRef}
+      className="py-20 lg:py-28 bg-[#0B0D11] text-white relative overflow-hidden border-y border-white/5"
+    >
+      {/* Subtle red glow behind center */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(227,30,36,0.06) 0%, transparent 70%)',
+        }}
+      />
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-white/8">
+          {stats.map((stat, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col items-center md:items-start text-center md:text-left py-10 md:py-0 md:px-12 first:pl-0 last:pr-0 group"
+            >
+              {/* Big number */}
+              <div className="flex items-end gap-1 mb-3">
+                <span
+                  className="stat-number text-6xl sm:text-7xl lg:text-8xl font-black font-outfit leading-none text-white tracking-tight group-hover:text-[#E31E24] transition-colors duration-500"
+                  data-target={stat.target}
+                >
+                  0
+                </span>
+                <span className="text-3xl sm:text-4xl font-black text-[#E31E24] leading-none mb-1">
+                  {stat.suffix}
+                </span>
               </div>
-            );
-          })}
+
+              {/* Animated line */}
+              <div className="stat-divider w-12 h-[2px] bg-[#E31E24] mb-4 group-hover:w-20 transition-all duration-500" />
+
+              {/* Label */}
+              <p className="text-slate-400 text-xs sm:text-sm font-medium leading-snug tracking-wide max-w-[180px]">
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

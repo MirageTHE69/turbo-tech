@@ -1,75 +1,76 @@
 'use client';
 
 import React from 'react';
-import { Factory, Flame, FlaskConical, Building2, Zap, Layers, Shield, Wrench, HardHat } from 'lucide-react';
 
 export default function IndustriesBar() {
   const clients = [
-    { name: 'HPCL', sub: 'Hindustan Petroleum' },
-    { name: 'IOCL', sub: 'Indian Oil' },
-    { name: 'MEIL', sub: 'Megha Engineering' },
-    { name: 'NSCPL', sub: 'Narmada Clean Tech' },
-    { name: 'ArcelorMittal Nippon Steel', sub: 'AM/NS India' },
-    { name: 'Mansi Ganga', sub: 'Builders & Engineers' },
+    'HPCL',
+    'IOCL',
+    'MEIL',
+    'NSCPL',
+    'ArcelorMittal Nippon Steel',
+    'Mansi Ganga Engineers',
   ];
 
-  const industries = [
-    { name: 'Oil & Gas', icon: Flame },
-    { name: 'Petrochemicals', icon: FlaskConical },
-    { name: 'Chemical Industries', icon: Factory },
-    { name: 'Power Plants', icon: Zap },
-    { name: 'Steel Plants', icon: Layers },
-    { name: 'Infrastructure & EPC', icon: Building2 },
-    { name: 'Heavy Engineering', icon: Wrench },
-    { name: 'Refineries', icon: HardHat },
+  const sectors = [
+    'Oil & Gas',
+    'Petrochemicals',
+    'Chemical Industries',
+    'Power Plants',
+    'Steel Plants',
+    'Infrastructure & EPC',
+    'Heavy Engineering',
+    'Refineries',
+    'Industrial Piping',
+    'Fabrication',
   ];
+
+  // Duplicate for seamless infinite loop
+  const clientsDouble = [...clients, ...clients];
+  const sectorsDouble = [...sectors, ...sectors];
 
   return (
-    <section id="industries" className="py-10 bg-slate-900 text-white border-y border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        
-        {/* Client Logos / Enterprise Partners */}
-        <div>
-          <div className="text-center md:text-left text-xs font-bold tracking-widest text-slate-400 uppercase font-outfit mb-4">
-            Trusted Execution Partner for Industry Leaders
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {clients.map((client, index) => (
+    <section id="industries" className="py-12 bg-[#080B11] text-white border-y border-white/5 overflow-hidden">
+      <div className="space-y-6">
+
+        {/* Label */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500">
+            Trusted Execution Partner For Industry Leaders
+          </p>
+        </div>
+
+        {/* Client Name Marquee */}
+        <div className="marquee-outer">
+          <div className="marquee-track">
+            {clientsDouble.map((name, i) => (
               <div
-                key={index}
-                className="bg-slate-800/80 hover:bg-slate-800 border border-slate-700/80 hover:border-[#E31E24]/50 rounded-xl p-3.5 text-center transition-all duration-200 group"
+                key={i}
+                className="flex items-center shrink-0 mr-12"
               >
-                <div className="text-sm font-extrabold text-white group-hover:text-[#E31E24] font-outfit tracking-tight">
-                  {client.name}
-                </div>
-                <div className="text-[10px] text-slate-400 font-medium truncate mt-0.5">
-                  {client.sub}
-                </div>
+                <span className="text-lg sm:text-xl font-black font-outfit text-white/30 hover:text-white transition-colors duration-300 tracking-tight cursor-default whitespace-nowrap">
+                  {name}
+                </span>
+                <span className="ml-12 w-1.5 h-1.5 rounded-full bg-[#E31E24] shrink-0" />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Key Industry Sectors Ticker */}
-        <div className="pt-4 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-xs font-bold tracking-widest text-[#E31E24] uppercase shrink-0 font-outfit flex items-center gap-2">
-            <Shield className="w-4 h-4" />
-            <span>Sectors Served</span>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-3">
-            {industries.map((item, index) => {
-              const IconComponent = item.icon;
-              return (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors cursor-default"
-                >
-                  <IconComponent className="w-4 h-4 text-[#E31E24]" />
-                  <span className="text-xs font-semibold font-outfit">{item.name}</span>
-                </div>
-              );
-            })}
+        {/* Sector Tags Marquee (reversed direction) */}
+        <div className="marquee-outer">
+          <div className="marquee-track" style={{ animationDirection: 'reverse', animationDuration: '22s' }}>
+            {sectorsDouble.map((name, i) => (
+              <div
+                key={i}
+                className="flex items-center shrink-0 mr-8"
+              >
+                <span className="text-[11px] font-bold font-outfit text-slate-500 hover:text-[#E31E24] transition-colors duration-300 uppercase tracking-widest whitespace-nowrap">
+                  {name}
+                </span>
+                <span className="ml-8 w-1 h-1 rounded-full bg-slate-700 shrink-0" />
+              </div>
+            ))}
           </div>
         </div>
 

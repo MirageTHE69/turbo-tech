@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight, ShieldCheck, Wrench } from 'lucide-react';
+import { ArrowRight, Wrench } from 'lucide-react';
 import SpotlightCard from './SpotlightCard';
 import { getIcon } from '@/lib/icons';
 
@@ -13,9 +13,7 @@ export default function ServiceCard({
   className = '',
 }) {
   const IconComponent = getIcon(service.iconName, Wrench);
-  const serviceNumber = service.number || `0${index + 1}`;
 
-  // Default image fallback if service.image is missing
   const defaultImages = [
     '/images/hero_plant.png',
     '/images/welder.png',
@@ -28,74 +26,66 @@ export default function ServiceCard({
 
   return (
     <SpotlightCard
-      className={`bg-white border border-slate-200/90 rounded-[28px] shadow-sm hover:shadow-2xl hover:border-red-200 transition-all duration-300 flex flex-col justify-between overflow-hidden group h-full ${className}`}
+      className={`bg-white border border-slate-100 rounded-3xl overflow-hidden group h-full flex flex-col shadow-sm hover:shadow-xl hover:border-red-100 transition-all duration-400 ${className}`}
     >
-      {/* Top Banner Image with Floating Red Pill Badge */}
-      <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-slate-900 shrink-0">
+      {/* Image — vivid filter */}
+      <div className="relative h-52 w-full overflow-hidden shrink-0 bg-slate-100">
         <img
           src={cardImage}
           alt={service.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+          className="w-full h-full object-cover img-vivid group-hover:scale-105 transition-transform duration-700 ease-out"
         />
-        {/* Subtle Overlay Gradient for Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-black/20" />
+        {/* Gradient for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
 
-        {/* Top-Left Pill Badge (e.g., 01 SERVICE) */}
-        <div className="absolute top-4 left-4 z-10">
-          <span className="bg-[#E31E24] text-white px-3.5 py-1.5 rounded-full text-xs font-extrabold font-outfit uppercase tracking-wider flex items-center gap-1.5 shadow-lg border border-white/20">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            <span>{serviceNumber} SERVICE</span>
+        {/* Number badge — top right */}
+        <div className="absolute top-4 right-4 z-10">
+          <span className="bg-[#E31E24] text-white text-[10px] font-black font-outfit px-2.5 py-1 rounded-full">
+            {String(index + 1).padStart(2, '0')}
           </span>
         </div>
       </div>
 
-      {/* Card Content Body */}
-      <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between bg-white">
+      {/* Card body */}
+      <div className="p-6 flex-1 flex flex-col justify-between">
         <div>
-          {/* Header Row: Soft Red Tint Icon Box & Title */}
-          <div className="flex items-start gap-4 mb-4">
-            <div className="w-14 h-14 rounded-2xl bg-[#FFF0F0] border border-red-100 text-[#E31E24] flex items-center justify-center shrink-0 shadow-sm group-hover:bg-[#E31E24] group-hover:text-white group-hover:border-[#E31E24] transition-all duration-300 group-hover:scale-105">
-              <IconComponent className="w-7 h-7" />
+          {/* Icon + title */}
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-9 h-9 rounded-xl bg-red-50 border border-red-100 text-[#E31E24] flex items-center justify-center shrink-0 group-hover:bg-[#E31E24] group-hover:text-white group-hover:border-[#E31E24] transition-all duration-300">
+              <IconComponent className="w-4.5 h-4.5" />
             </div>
-
-            <div className="flex-1 pt-0.5">
-              <h3 className="text-xl sm:text-2xl font-extrabold text-[#0F1520] font-outfit leading-tight group-hover:text-[#E31E24] transition-colors">
-                {service.title}
-              </h3>
-              {/* Red Accent Line underneath title */}
-              <div className="w-10 h-1 bg-[#E31E24] rounded-full mt-2 group-hover:w-16 transition-all duration-300"></div>
-            </div>
+            <h3 className="text-lg font-extrabold text-[#0F1520] font-outfit leading-tight group-hover:text-[#E31E24] transition-colors">
+              {service.title}
+            </h3>
           </div>
 
-          {/* Description */}
-          <p className="text-slate-600 text-sm leading-relaxed mb-6 font-sans">
+          <p className="text-slate-500 text-sm leading-relaxed line-clamp-2">
             {service.desc}
           </p>
         </div>
 
-        {/* Bottom Footer Action Link */}
-        <div className="pt-4 border-t border-slate-100 flex items-center justify-between mt-auto">
+        {/* Footer */}
+        <div className="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
           {onActionClick ? (
             <button
               onClick={onActionClick}
-              className="flex items-center gap-2 text-sm font-bold text-slate-800 group-hover:text-[#E31E24] transition-colors font-outfit"
+              className="text-xs font-bold text-slate-700 group-hover:text-[#E31E24] transition-colors font-outfit flex items-center gap-2"
             >
               <span>{actionText}</span>
-              <ArrowRight className="w-4 h-4 text-[#E31E24] group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </button>
           ) : (
             <a
               href="/services"
-              className="flex items-center gap-2 text-sm font-bold text-slate-800 group-hover:text-[#E31E24] transition-colors font-outfit"
+              className="text-xs font-bold text-slate-700 group-hover:text-[#E31E24] transition-colors font-outfit flex items-center gap-2"
             >
               <span>{actionText}</span>
-              <ArrowRight className="w-4 h-4 text-[#E31E24] group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </a>
           )}
 
-          {/* Circular Red Action Button */}
-          <div className="w-9 h-9 rounded-full bg-[#FFF0F0] text-[#E31E24] flex items-center justify-center group-hover:bg-[#E31E24] group-hover:text-white transition-all duration-300 shadow-sm group-hover:scale-110">
-            <ArrowRight className="w-4 h-4" />
+          <div className="w-8 h-8 rounded-full bg-slate-50 text-slate-400 flex items-center justify-center group-hover:bg-[#E31E24] group-hover:text-white transition-all duration-300 border border-slate-100 group-hover:border-[#E31E24]">
+            <ArrowRight className="w-3.5 h-3.5" />
           </div>
         </div>
       </div>
