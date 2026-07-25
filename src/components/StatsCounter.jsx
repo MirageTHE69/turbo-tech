@@ -27,11 +27,11 @@ export default function StatsCounter() {
 
         ScrollTrigger.create({
           trigger: sectionRef.current,
-          start: 'top 80%',
+          start: 'top 85%',
           onEnter: () => {
             gsap.to(obj, {
               val: targetVal,
-              duration: 2.4,
+              duration: 2,
               ease: 'power3.out',
               onUpdate: () => {
                 counter.innerText = Math.floor(obj.val);
@@ -42,16 +42,15 @@ export default function StatsCounter() {
         });
       });
 
-      // Section lines animate in
       gsap.from('.stat-divider', {
         scaleX: 0,
         transformOrigin: 'left',
-        duration: 1,
-        stagger: 0.15,
+        duration: 0.8,
+        stagger: 0.1,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 80%',
+          start: 'top 85%',
         },
       });
     }, sectionRef);
@@ -62,13 +61,13 @@ export default function StatsCounter() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 lg:py-28 bg-[#0B0D11] text-white relative overflow-hidden border-y border-white/5"
+      className="py-10 lg:py-14 bg-[#0B0D11] text-white relative overflow-hidden border-y border-white/5"
     >
-      {/* Subtle red glow behind center */}
+      {/* Subtle red ambient glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(227,30,36,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 50% 50% at 50% 50%, rgba(227,30,36,0.05) 0%, transparent 70%)',
         }}
       />
 
@@ -77,26 +76,26 @@ export default function StatsCounter() {
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-center md:items-start text-center md:text-left py-10 md:py-0 md:px-12 first:pl-0 last:pr-0 group"
+              className="flex flex-col items-center md:items-start text-center md:text-left py-5 md:py-0 md:px-8 first:pl-0 last:pr-0 group"
             >
-              {/* Big number */}
-              <div className="flex items-end gap-1 mb-3">
+              {/* Number */}
+              <div className="flex items-end gap-1 mb-2">
                 <span
-                  className="stat-number text-6xl sm:text-7xl lg:text-8xl font-black font-outfit leading-none text-white tracking-tight group-hover:text-[#E31E24] transition-colors duration-500"
+                  className="stat-number text-4xl sm:text-5xl lg:text-6xl font-black font-outfit leading-none text-white tracking-tight group-hover:text-[#E31E24] transition-colors duration-300"
                   data-target={stat.target}
                 >
                   0
                 </span>
-                <span className="text-3xl sm:text-4xl font-black text-[#E31E24] leading-none mb-1">
+                <span className="text-2xl sm:text-3xl font-black text-[#E31E24] leading-none mb-0.5">
                   {stat.suffix}
                 </span>
               </div>
 
-              {/* Animated line */}
-              <div className="stat-divider w-12 h-[2px] bg-[#E31E24] mb-4 group-hover:w-20 transition-all duration-500" />
+              {/* Red accent line */}
+              <div className="stat-divider w-8 h-[2px] bg-[#E31E24] mb-2.5 group-hover:w-14 transition-all duration-300" />
 
               {/* Label */}
-              <p className="text-slate-400 text-xs sm:text-sm font-medium leading-snug tracking-wide max-w-[180px]">
+              <p className="text-slate-400 text-xs font-semibold leading-snug tracking-wide max-w-[180px]">
                 {stat.label}
               </p>
             </div>

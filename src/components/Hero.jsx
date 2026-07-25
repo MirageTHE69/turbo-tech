@@ -104,7 +104,7 @@ export default function Hero({ onOpenQuote }) {
         </div>
 
         {/* Hero Content — left-anchored */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 xl:px-24 relative z-10 w-full">
+        <div className="w-full max-w-6xl pl-6 sm:pl-10 md:pl-16 lg:pl-20 xl:pl-24 pr-6 relative z-10">
 
           {/* Eyebrow */}
           <div className="hero-anim flex items-center gap-3 mb-6">
