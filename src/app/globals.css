@@ -16,10 +16,25 @@
 }
 
 html {
-  scroll-behavior: smooth;
   font-family: var(--font-plus-jakarta);
   color: var(--brand-dark);
   background-color: #FFFFFF;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body {

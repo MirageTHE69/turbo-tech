@@ -28,6 +28,11 @@ export default function TrainingSection() {
               <img
                 src="/images/welder.png"
                 alt="Turbo Tech Welding & Fitter Training Institute Workshop"
+                onLoad={() => {
+                  if (typeof window !== 'undefined' && window.dispatchEvent) {
+                    window.dispatchEvent(new Event('resize'));
+                  }
+                }}
                 className="w-full h-[420px] sm:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
 

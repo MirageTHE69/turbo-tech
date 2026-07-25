@@ -104,6 +104,11 @@ export default function Hero({ onOpenQuote }) {
             playsInline
             preload="auto"
             poster="/images/hero_plant.png"
+            onLoadedData={() => {
+              if (typeof window !== 'undefined') {
+                ScrollTrigger.refresh();
+              }
+            }}
             className="hero-video-bg absolute inset-0 w-full h-full object-cover scale-100 transition-all duration-700 brightness-90 contrast-105"
           >
             <source src="/video/hero-background-vid.mp4" type="video/mp4" />
