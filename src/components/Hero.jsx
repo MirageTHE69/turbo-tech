@@ -103,8 +103,8 @@ export default function Hero({ onOpenQuote }) {
           <div className="absolute inset-0 bg-gradient-to-t from-[#08090D] via-transparent to-transparent" />
         </div>
 
-        {/* Hero Content — centred single column */}
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        {/* Hero Content — left-anchored */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 xl:px-24 relative z-10 w-full">
 
           {/* Eyebrow */}
           <div className="hero-anim flex items-center gap-3 mb-6">

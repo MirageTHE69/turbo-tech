@@ -10,14 +10,14 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
           {/* Left — Image with reveal overlay */}
-          <div className="relative">
+          <div className="relative scroll-reveal">
             {/* Decorative behind-shadow block */}
             <div className="absolute -bottom-3 -right-3 w-full h-full rounded-3xl border border-[#E31E24]/20 pointer-events-none" />
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src="/images/about_team.png"
                 alt="Turbo Tech Engineering Team"
-                className="w-full h-[440px] sm:h-[500px] object-cover img-vivid"
+                className="w-full h-[340px] sm:h-[400px] object-cover img-vivid"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#08090D]/60 via-transparent to-transparent" />
 
@@ -32,7 +32,7 @@ export default function AboutSection() {
           </div>
 
           {/* Right — Lean content */}
-          <div className="space-y-8">
+          <div className="space-y-8 scroll-reveal scroll-reveal-delay-2">
             <div>
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24] mb-4">
                 About Turbo Tech

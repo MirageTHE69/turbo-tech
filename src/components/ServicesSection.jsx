@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import { ArrowRight, Wrench } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -15,56 +15,56 @@ export default function ServicesSection() {
   const sectionRef = useRef(null);
   const { services } = useCms();
 
+  // Show only 3 featured services on home
+  const featured = services.slice(0, 3);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from('.service-card-anim', {
-        y: 60,
-        scale: 0.95,
+        y: 50,
         opacity: 0,
-        duration: 0.9,
-        stagger: 0.1,
+        duration: 0.8,
+        stagger: 0.12,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 75%',
+          start: 'top 78%',
         },
       });
     }, sectionRef);
-
     return () => ctx.revert();
-  }, [services]);
+  }, [featured]);
 
   return (
-    <section id="services" ref={sectionRef} className="py-24 bg-slate-50 relative overflow-hidden bg-grid-pattern border-y border-slate-200/80">
-      {/* Glow Orbs */}
-      <div className="mesh-glow-red top-1/3 -right-32 opacity-40"></div>
+    <section id="services" ref={sectionRef} className="py-24 lg:py-32 bg-white relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div className="space-y-3">
-            <span className="tag-badge">Our Core Services</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0F1520] font-outfit">
-              Engineering Solutions <br className="hidden sm:inline" />
-              <span className="text-gradient-red">That Drive Industry</span>
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
+          <div>
+            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24] mb-4">
+              Our Core Services
+            </p>
+            <h2 className="text-4xl sm:text-5xl font-black text-[#0F1520] font-outfit leading-[1.08]">
+              What We Build<br />For Industry.
             </h2>
           </div>
 
           <a
             href="/services"
-            className="inline-flex items-center gap-2 text-[#E31E24] font-extrabold text-sm hover:gap-3 transition-all font-outfit"
+            className="inline-flex items-center gap-3 text-[#0F1520] font-bold text-sm hover:text-[#E31E24] transition-all group font-outfit shrink-0"
           >
-            <span>Explore All 10 Services</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>View All 10 Services</span>
+            <div className="w-8 h-[2px] bg-slate-200 group-hover:bg-[#E31E24] group-hover:w-12 transition-all" />
+            <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#E31E24] transition-colors" />
           </a>
         </div>
 
-        {/* Dynamic CMS Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+        {/* 3 Featured Service Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {featured.map((service, index) => (
             <div key={service.id || index} className="service-card-anim">
-              <ServiceCard service={service} index={index} actionText="Explore Service" />
+              <ServiceCard service={service} index={index} actionText="Learn More" />
             </div>
           ))}
         </div>

@@ -23,60 +23,58 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="py-24 bg-slate-900 text-white relative overflow-hidden">
-      {/* Glow Orbs */}
-      <div className="mesh-glow-blue -top-20 -left-20 opacity-60"></div>
-      <div className="mesh-glow-red bottom-0 right-0 opacity-40"></div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+    <section id="projects" className="py-24 lg:py-32 bg-[#0B0D11] text-white relative overflow-hidden border-t border-white/5">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-3">
-            <span className="tag-badge text-[#E31E24] bg-slate-800 border-slate-700">Project Portfolio</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white font-outfit">
-              Executed Key Engineering Projects
+            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24]">
+              Project Portfolio
+            </p>
+            <h2 className="text-4xl sm:text-5xl font-black text-white font-outfit leading-[1.08]">
+              Executed Key<br />Engineering Projects.
             </h2>
           </div>
 
           <div className="flex items-center gap-4">
             <a
               href="/projects"
-              className="inline-flex items-center gap-2 text-[#E31E24] font-extrabold text-sm hover:gap-3 transition-all font-outfit mr-2"
+              className="inline-flex items-center gap-2 text-white/80 hover:text-white font-bold text-xs font-outfit mr-2 transition-colors"
             >
-              <span>Explore All Projects ({projects.length})</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>Explore All ({projects.length})</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#E31E24]" />
             </a>
 
             <div className="flex items-center gap-2">
               <button
                 onClick={() => handleScroll('left')}
-                className="w-11 h-11 rounded-full border border-slate-700 bg-slate-800 text-slate-300 hover:bg-[#E31E24] hover:text-white hover:border-[#E31E24] flex items-center justify-center shadow-lg transition-all"
+                className="w-10 h-10 rounded-full border border-white/10 bg-white/5 text-slate-300 hover:bg-[#E31E24] hover:text-white hover:border-[#E31E24] flex items-center justify-center transition-all"
                 aria-label="Previous Projects"
               >
-                <ChevronLeft className="w-5 h-5" />
+                <ChevronLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={() => handleScroll('right')}
-                className="w-11 h-11 rounded-full border border-slate-700 bg-slate-800 text-slate-300 hover:bg-[#E31E24] hover:text-white hover:border-[#E31E24] flex items-center justify-center shadow-lg transition-all"
+                className="w-10 h-10 rounded-full border border-white/10 bg-white/5 text-slate-300 hover:bg-[#E31E24] hover:text-white hover:border-[#E31E24] flex items-center justify-center transition-all"
                 aria-label="Next Projects"
               >
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-4 h-4" />
               </button>
             </div>
           </div>
         </div>
 
         {/* Category Filter Pills */}
-        <div className="flex flex-wrap items-center gap-2.5 pt-2 border-b border-slate-800 pb-4">
+        <div className="flex flex-wrap items-center gap-2 pt-2 border-b border-white/10 pb-4">
           {categories.map((cat, idx) => (
             <button
               key={idx}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs font-bold font-outfit transition-all duration-300 ${
+              className={`px-4 py-1.5 rounded-full text-[11px] font-bold font-outfit transition-all duration-300 ${
                 activeCategory === cat
-                  ? 'bg-[#E31E24] text-white shadow-lg shadow-[#E31E24]/30 scale-105'
-                  : 'bg-slate-800/80 text-slate-400 hover:text-white hover:bg-slate-800'
+                  ? 'bg-[#E31E24] text-white'
+                  : 'bg-white/5 text-slate-400 hover:text-white hover:bg-white/10'
               }`}
             >
               {cat}
@@ -93,43 +91,47 @@ export default function ProjectsSection() {
           {(filteredProjects.length > 0 ? filteredProjects : projects).map((proj, idx) => (
             <div
               key={proj.id || idx}
-              className="min-w-[300px] sm:min-w-[360px] md:min-w-[400px] bg-slate-800/80 border border-slate-700/80 rounded-3xl overflow-hidden shadow-xl group hover:border-[#E31E24]/60 hover:shadow-2xl transition-all duration-500 snap-start flex flex-col justify-between"
+              className="min-w-[280px] sm:min-w-[340px] bg-[#0F1219] border border-white/8 rounded-2xl overflow-hidden group hover:border-[#E31E24]/50 transition-all duration-400 snap-start flex flex-col justify-between"
             >
-              <div className="relative h-60 overflow-hidden">
+              <div className="relative h-52 overflow-hidden">
                 <img
                   src={proj.image || '/images/hero_plant.png'}
                   alt={proj.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover img-vivid group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                <div className="absolute top-4 left-4 bg-[#E31E24] text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F1219] via-transparent to-transparent"></div>
+                <div className="absolute top-3 left-3 bg-[#E31E24] text-white text-[9px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider font-outfit">
                   {proj.category}
                 </div>
               </div>
 
-              <div className="p-6 space-y-3">
-                <h3 className="text-xl font-extrabold text-white font-outfit group-hover:text-[#E31E24] transition-colors leading-snug">
+              <div className="p-5 space-y-2.5">
+                <h3 className="text-lg font-extrabold text-white font-outfit group-hover:text-[#E31E24] transition-colors leading-snug">
                   {proj.title}
                 </h3>
                 <p className="text-slate-400 text-xs leading-relaxed line-clamp-2">
                   {proj.desc}
                 </p>
-                <div className="flex items-center gap-4 pt-2 text-xs text-slate-400 font-semibold border-t border-slate-700/60">
-                  <div className="flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-[#E31E24]" />
-                    <span>{proj.location}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-[#E31E24]" />
-                    <span>{proj.duration}</span>
-                  </div>
+                <div className="flex items-center gap-4 pt-2 text-[11px] text-slate-400 font-semibold border-t border-white/5">
+                  {proj.location && (
+                    <div className="flex items-center gap-1">
+                      <MapPin className="w-3 h-3 text-[#E31E24]" />
+                      <span>{proj.location}</span>
+                    </div>
+                  )}
+                  {proj.duration && (
+                    <div className="flex items-center gap-1">
+                      <Calendar className="w-3 h-3 text-[#E31E24]" />
+                      <span>{proj.duration}</span>
+                    </div>
+                  )}
                 </div>
               </div>
 
-              <div className="px-6 pb-6 pt-2 flex items-center justify-between text-xs font-extrabold text-slate-300 group-hover:text-[#E31E24] transition-colors font-outfit">
+              <div className="px-5 pb-5 pt-1 flex items-center justify-between text-xs font-bold text-slate-300 group-hover:text-[#E31E24] transition-colors font-outfit">
                 <span>View Engineering Specs</span>
-                <div className="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-white group-hover:bg-[#E31E24] transition-all">
-                  <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                <div className="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center text-white group-hover:bg-[#E31E24] transition-all">
+                  <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
                 </div>
               </div>
             </div>

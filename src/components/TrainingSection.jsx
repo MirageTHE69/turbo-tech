@@ -16,7 +16,7 @@ export default function TrainingSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
           {/* Left — Text first on this section */}
-          <div className="space-y-8 order-2 lg:order-1">
+          <div className="space-y-8 order-2 lg:order-1 scroll-reveal scroll-reveal-delay-2">
             <div>
               <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24] mb-4">
                 Technical Training Institute
@@ -54,7 +54,7 @@ export default function TrainingSection() {
           </div>
 
           {/* Right — Image */}
-          <div className="relative order-1 lg:order-2">
+          <div className="relative order-1 lg:order-2 scroll-reveal">
             <div className="absolute -bottom-3 -left-3 w-full h-full rounded-3xl border border-[#E31E24]/20 pointer-events-none" />
             <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
               <img

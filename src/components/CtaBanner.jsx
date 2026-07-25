@@ -35,7 +35,7 @@ export default function CtaBanner({ onOpenQuote }) {
           <div className="flex flex-wrap items-center justify-center gap-4 shrink-0">
             <button
               onClick={onOpenQuote}
-              className="btn-primary-red px-8 py-4 rounded-full text-sm font-bold flex items-center gap-2 font-outfit"
+              className="btn-primary-red btn-magnetic px-8 py-4 rounded-full text-sm font-bold flex items-center gap-2 font-outfit"
             >
               <span>Get a Free Quote</span>
               <ArrowRight className="w-4 h-4" />
