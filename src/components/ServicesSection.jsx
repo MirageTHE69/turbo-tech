@@ -1,69 +1,66 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import ServiceCard from './ServiceCard';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useCms } from '@/context/CmsContext';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export default function ServicesSection() {
-  const sectionRef = useRef(null);
   const { services } = useCms();
 
-  // Show only 3 featured services on home
-  const featured = services.slice(0, 3);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.service-card-anim', {
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.12,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 78%',
-        },
-      });
-    }, sectionRef);
-    return () => ctx.revert();
-  }, [featured]);
+  // Display 4 featured services on home landing page
+  const featured = services.slice(0, 4);
 
   return (
-    <section id="services" ref={sectionRef} className="py-28 lg:py-36 bg-white relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="services" className="py-24 lg:py-32 bg-[#FAFAFC] relative overflow-hidden">
+      
+      {/* Background Graphic: Concentric Curves on Right */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none opacity-20 z-0 overflow-hidden hidden md:block">
+        <svg viewBox="0 0 500 500" fill="none" className="w-full h-full text-red-500">
+          <circle cx="350" cy="250" r="120" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
+          <circle cx="350" cy="250" r="200" stroke="currentColor" strokeWidth="1" />
+          <circle cx="350" cy="250" r="280" stroke="currentColor" strokeWidth="1" strokeDasharray="6 6" />
+          <circle cx="350" cy="250" r="360" stroke="currentColor" strokeWidth="1" />
+        </svg>
+      </div>
 
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
-          <div>
-            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24] mb-4">
-              Our Core Services
-            </p>
-            <h2 className="text-4xl sm:text-5xl font-black text-[#0F1520] font-outfit leading-[1.08]">
-              What We Build<br />For Industry.
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        {/* Section Header Row */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 text-[#E52323] text-xs font-extrabold tracking-widest uppercase">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#E52323] inline-block animate-pulse" />
+              OUR SERVICES
+            </div>
+
+            <h2 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-[#0F172A] tracking-tight leading-[1.12] font-outfit">
+              What We Build <br />
+              <span className="text-[#E52323]">For Industry.</span>
             </h2>
+
+            <div className="w-12 h-1 bg-[#E52323] rounded-full my-3" />
+
+            <p className="text-slate-500 text-sm sm:text-base max-w-xl leading-relaxed font-normal">
+              End-to-end engineering solutions delivering strength, precision, and performance across every industrial sector.
+            </p>
           </div>
 
           <a
             href="/services"
-            className="inline-flex items-center gap-3 text-[#0F1520] font-bold text-sm hover:text-[#E31E24] transition-all group font-outfit shrink-0"
+            className="inline-flex items-center gap-3 bg-white border border-slate-200/80 hover:border-slate-300 px-6 py-3 rounded-full text-slate-800 font-bold text-sm shadow-sm hover:shadow transition-all group font-outfit cursor-pointer shrink-0 self-start md:self-auto"
           >
-            <span>View All 10 Services</span>
-            <div className="w-8 h-[2px] bg-slate-200 group-hover:bg-[#E31E24] group-hover:w-12 transition-all" />
-            <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-[#E31E24] transition-colors" />
+            <span>View All Services</span>
+            <div className="w-8 h-8 rounded-full bg-red-50 text-[#E52323] flex items-center justify-center group-hover:bg-[#E52323] group-hover:text-white transition-all shadow-sm">
+              <ArrowRight className="w-4 h-4" />
+            </div>
           </a>
         </div>
 
-        {/* 3 Featured Service Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* 4 Featured Service Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {featured.map((service, index) => (
-            <div key={service.id || index} className="service-card-anim">
+            <div key={service.id || index}>
               <ServiceCard service={service} index={index} actionText="Learn More" />
             </div>
           ))}

@@ -24,7 +24,7 @@ export default function TrainingClient() {
       <div id="cursor-ring" aria-hidden="true" />
       <CursorDot />
 
-      <Header onOpenQuote={() => setIsQuoteOpen(true)} />
+      <Header transparentOnTop={false} onOpenQuote={() => setIsQuoteOpen(true)} />
 
       {/* Hero Showcase */}
       <TrainingHero onOpenQuote={() => setIsQuoteOpen(true)} />

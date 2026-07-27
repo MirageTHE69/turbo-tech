@@ -25,7 +25,7 @@ export default function ServicesClient() {
       <div id="cursor-ring" aria-hidden="true" />
       <CursorDot />
 
-      <Header onOpenQuote={() => setIsQuoteOpen(true)} />
+      <Header transparentOnTop={false} onOpenQuote={() => setIsQuoteOpen(true)} />
 
       {/* Services Hero */}
       <ServicesHero onOpenQuote={() => setIsQuoteOpen(true)} />
