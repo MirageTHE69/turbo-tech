@@ -300,7 +300,7 @@ h1, h2, h3, h4, h5, h6 {
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee 60s linear infinite;
+  animation: marquee 110s linear infinite;
   will-change: transform;
 }
 

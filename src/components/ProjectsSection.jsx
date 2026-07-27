@@ -23,7 +23,7 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="py-24 lg:py-32 bg-[#0B0D11] text-white relative overflow-hidden border-t border-white/5">
+    <section id="projects" className="py-28 lg:py-36 bg-[#0B0D11] text-white relative overflow-hidden border-t border-white/5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
 
         {/* Section Header */}

@@ -6,7 +6,7 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
   const quickLinks = [
-    { label: 'About', href: '/about' },
+    { label: 'About Us', href: '/about' },
     { label: 'Services', href: '/services' },
     { label: 'Projects', href: '/projects' },
     { label: 'Training Institute', href: '/training' },
@@ -14,8 +14,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer id="contact" className="bg-[#08090D] text-slate-400 text-xs pt-16 pb-10 border-t border-white/5">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <footer id="contact" className="bg-[#08090D] text-slate-300 text-sm pt-20 pb-12 border-t border-white/10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
 
         {/* Main Grid — 3 columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
@@ -23,10 +23,10 @@ export default function Footer() {
           {/* Col 1: Brand */}
           <div className="space-y-5">
             <Logo light />
-            <p className="text-slate-500 leading-relaxed text-[11px] max-w-xs">
-              Industrial engineering, fabrication & skill training — built for India's heavy industries.
+            <p className="text-slate-400 leading-relaxed text-xs sm:text-sm max-w-xs">
+              Industrial engineering, fabrication & skill training — built for India&apos;s heavy industries.
             </p>
-            <div className="flex items-center gap-2.5 pt-1">
+            <div className="flex items-center gap-3 pt-2">
               {[
                 {
                   label: 'LinkedIn',
@@ -45,9 +45,9 @@ export default function Footer() {
                   key={s.label}
                   href="#"
                   aria-label={s.label}
-                  className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#E31E24] text-slate-400 hover:text-white flex items-center justify-center transition-all duration-200"
+                  className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#E31E24] text-slate-300 hover:text-white flex items-center justify-center transition-all duration-200"
                 >
-                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                     <path d={s.path} />
                   </svg>
                 </a>
@@ -57,17 +57,17 @@ export default function Footer() {
 
           {/* Col 2: Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-[10px] font-bold text-white uppercase tracking-[0.18em] font-outfit">
+            <h4 className="text-xs font-bold text-white uppercase tracking-widest font-outfit">
               Navigation
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-[11px] text-slate-500 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+                    className="text-xs sm:text-sm text-slate-400 hover:text-white transition-colors duration-200 flex items-center gap-2.5 group"
                   >
-                    <span className="w-3 h-[1px] bg-slate-700 group-hover:bg-[#E31E24] group-hover:w-5 transition-all duration-200" />
+                    <span className="w-3.5 h-[1.5px] bg-slate-700 group-hover:bg-[#E31E24] group-hover:w-5 transition-all duration-200" />
                     {link.label}
                   </a>
                 </li>
@@ -77,25 +77,25 @@ export default function Footer() {
 
           {/* Col 3: Contact */}
           <div className="space-y-4">
-            <h4 className="text-[10px] font-bold text-white uppercase tracking-[0.18em] font-outfit">
+            <h4 className="text-xs font-bold text-white uppercase tracking-widest font-outfit">
               Get In Touch
             </h4>
-            <ul className="space-y-3.5">
+            <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="w-3.5 h-3.5 text-[#E31E24] shrink-0 mt-0.5" />
-                <span className="text-[11px] leading-relaxed text-slate-500">
+                <MapPin className="w-4 h-4 text-[#E31E24] shrink-0 mt-0.5" />
+                <span className="text-xs sm:text-sm leading-relaxed text-slate-400">
                   Kohid Gope Patti, Near Brahm Sthan,<br />Tamkuhi Raj, Kushinagar, UP – 274407
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-3.5 h-3.5 text-[#E31E24] shrink-0" />
-                <a href="tel:+916351149073" className="text-[11px] text-slate-500 hover:text-white transition-colors">
+                <Phone className="w-4 h-4 text-[#E31E24] shrink-0" />
+                <a href="tel:+916351149073" className="text-xs sm:text-sm text-slate-400 hover:text-white transition-colors">
                   +91 63511 49073
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-3.5 h-3.5 text-[#E31E24] shrink-0" />
-                <a href="mailto:santosh.turbotech@gmail.com" className="text-[11px] text-slate-500 hover:text-white transition-colors">
+                <Mail className="w-4 h-4 text-[#E31E24] shrink-0" />
+                <a href="mailto:santosh.turbotech@gmail.com" className="text-xs sm:text-sm text-slate-400 hover:text-white transition-colors">
                   santosh.turbotech@gmail.com
                 </a>
               </li>
@@ -105,9 +105,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] text-slate-600">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>© 2026 Turbo Tech. All rights reserved.</p>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
           </div>

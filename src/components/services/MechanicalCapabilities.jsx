@@ -41,7 +41,7 @@ export default function MechanicalCapabilities() {
 
       {/* Ticker 1 — left to right */}
       <div className="marquee-outer mb-4">
-        <div className="marquee-track" style={{ animationDuration: '75s' }}>
+        <div className="marquee-track" style={{ animationDuration: '130s' }}>
           {capabilitiesDouble.map((cap, i) => (
             <div key={i} className="flex items-center shrink-0 mr-10">
               <span className="text-base sm:text-lg font-bold font-outfit text-slate-300 whitespace-nowrap hover:text-[#E31E24] transition-colors cursor-default">
@@ -55,7 +55,7 @@ export default function MechanicalCapabilities() {
 
       {/* Ticker 2 — right to left */}
       <div className="marquee-outer">
-        <div className="marquee-track" style={{ animationDirection: 'reverse', animationDuration: '58s' }}>
+        <div className="marquee-track" style={{ animationDirection: 'reverse', animationDuration: '100s' }}>
           {capabilitiesDouble.map((cap, i) => (
             <div key={i} className="flex items-center shrink-0 mr-10">
               <span className="text-sm font-medium font-outfit text-slate-500 whitespace-nowrap hover:text-white transition-colors cursor-default uppercase tracking-wider">

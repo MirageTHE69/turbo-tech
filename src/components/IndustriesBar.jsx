@@ -42,7 +42,7 @@ export default function IndustriesBar() {
 
         {/* Client Name Marquee */}
         <div className="marquee-outer">
-          <div className="marquee-track" style={{ animationDuration: '65s' }}>
+          <div className="marquee-track" style={{ animationDuration: '120s' }}>
             {clientsDouble.map((name, i) => (
               <div
                 key={i}
@@ -59,7 +59,7 @@ export default function IndustriesBar() {
 
         {/* Sector Tags Marquee (reversed direction) */}
         <div className="marquee-outer">
-          <div className="marquee-track" style={{ animationDirection: 'reverse', animationDuration: '48s' }}>
+          <div className="marquee-track" style={{ animationDirection: 'reverse', animationDuration: '90s' }}>
             {sectorsDouble.map((name, i) => (
               <div
                 key={i}
