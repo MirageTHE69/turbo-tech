@@ -38,7 +38,7 @@ export default function CoreServicesGrid({ onOpenQuote }) {
   }, [services]);
 
   return (
-    <section className="py-24 lg:py-32 bg-[#F9F9F7]">
+    <section id="core-services" className="py-24 lg:py-32 bg-[#F9F9F7]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
