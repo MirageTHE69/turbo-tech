@@ -5,65 +5,70 @@ import { Quote } from 'lucide-react';
 
 export default function FounderMessage() {
   return (
-    <section className="py-20 bg-slate-50 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section className="py-24 lg:py-32 bg-[#F5F4F0] border-b border-[#E2DDD8]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
-          {/* Left Column - Large Quote Statement */}
-          <div className="lg:col-span-6 relative space-y-4">
-            <Quote className="w-20 h-20 text-slate-200/80 absolute -top-8 -left-4 pointer-events-none" />
+          {/* Left — Quote */}
+          <div className="space-y-8">
+            <p className="eyebrow">Founder's Message</p>
 
-            <h2 className="relative z-10 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F1520] font-outfit leading-tight">
-              &ldquo;We don&apos;t just execute projects, <br />
-              we build lasting partnerships.&rdquo;
-            </h2>
+            <div className="relative">
+              {/* Large quote mark */}
+              <div className="absolute -top-4 -left-2 text-[7rem] font-black text-[#E31E24]/6 font-outfit leading-none select-none pointer-events-none">
+                "
+              </div>
+              <blockquote className="relative z-10 text-3xl sm:text-4xl font-black text-[#0F1520] font-outfit leading-[1.2] tracking-tight">
+                We don&apos;t just execute projects, we build lasting partnerships.
+              </blockquote>
+            </div>
+
+            <div className="w-10 h-[2px] bg-[#E31E24]" />
+
+            <p className="text-slate-500 text-base leading-[1.8] max-w-md">
+              Our goal is to deliver consistent value, create opportunities, and
+              contribute to the growth of industries globally — one project at a time.
+            </p>
           </div>
 
-          {/* Right Column - Founder Profile Card */}
-          <div className="lg:col-span-6">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-200 flex flex-col sm:flex-row items-center gap-6 relative overflow-hidden">
-              {/* Red Left Accent Bar */}
-              <div className="absolute left-0 top-0 bottom-0 w-2 bg-[#E31E24]"></div>
+          {/* Right — Founder card */}
+          <div className="relative">
+            <div className="absolute -bottom-4 -right-4 w-full h-full border border-[#E31E24]/10 pointer-events-none" />
 
-              {/* Founder Image Frame */}
-              <div className="w-36 h-44 sm:w-40 sm:h-48 rounded-2xl overflow-hidden shrink-0 shadow-md border border-slate-100">
-                <img
-                  src="/images/founder.png"
-                  alt="Santosh Chauhan - Founder & Managing Director"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
+            <div className="relative bg-white border border-[#E2DDD8] overflow-hidden">
+              {/* Red left bar */}
+              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#E31E24]" />
 
-              {/* Founder Details & Narrative */}
-              <div className="space-y-3 pl-2">
-                <div>
-                  <h3 className="text-xl font-bold text-[#0F1520] font-outfit">Santosh Chauhan</h3>
-                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
-                    Founder & Managing Director
-                  </p>
+              <div className="flex flex-col sm:flex-row items-center gap-8 p-8 pl-10">
+                {/* Founder image */}
+                <div className="w-32 h-40 sm:w-36 sm:h-44 shrink-0 overflow-hidden border border-[#E2DDD8]">
+                  <img
+                    src="/images/founder.png"
+                    alt="Santosh Chauhan - Founder & Managing Director"
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
 
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                  &ldquo;Our goal is to deliver consistent value, create opportunities, and contribute to the growth of industries globally.&rdquo;
-                </p>
+                {/* Details */}
+                <div className="space-y-3">
+                  <div>
+                    <h3 className="text-xl font-bold text-[#0F1520] font-outfit">Santosh Chauhan</h3>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400 mt-0.5">
+                      Founder & Managing Director
+                    </p>
+                  </div>
+                  <div className="w-8 h-px bg-[#E2DDD8]" />
+                  <p className="text-slate-500 text-sm leading-relaxed">
+                    &ldquo;Our goal is to deliver consistent value, create opportunities, and contribute to the growth of industries globally.&rdquo;
+                  </p>
 
-                {/* Handwritten Signature SVG */}
-                <div className="pt-2 flex justify-end">
-                  <svg className="w-32 h-10 text-slate-800" viewBox="0 0 200 60" fill="none">
-                    <path
-                      d="M 10 40 Q 30 10, 50 35 T 90 20 T 130 45 T 180 25"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      fill="none"
-                    />
-                    <text x="30" y="52" fontFamily="cursive" fontSize="14" fill="currentColor">
-                      Santosh Chauhan
-                    </text>
+                  {/* Signature */}
+                  <svg className="w-28 h-8 text-slate-700" viewBox="0 0 200 50" fill="none">
+                    <path d="M 10 35 Q 30 8, 50 30 T 90 16 T 130 38 T 180 20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+                    <text x="28" y="46" fontFamily="cursive" fontSize="12" fill="currentColor">Santosh Chauhan</text>
                   </svg>
                 </div>
               </div>
-
             </div>
           </div>
 

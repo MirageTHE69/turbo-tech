@@ -1,56 +1,92 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight, Sparkles, PhoneCall } from 'lucide-react';
+import { ArrowRight, PhoneCall } from 'lucide-react';
 
 export default function CtaBanner({ onOpenQuote }) {
   return (
-    <section className="py-20 bg-slate-950 text-white relative overflow-hidden bg-grid-pattern-dark border-t border-slate-800">
-      {/* Ambient Mesh Orbs */}
-      <div className="mesh-glow-red top-0 left-1/4 opacity-60"></div>
-      <div className="mesh-glow-blue bottom-0 right-1/4 opacity-50"></div>
+    <section className="relative overflow-hidden bg-white border-t border-[#E2DDD8]">
+      {/* Split layout — flex on desktop, stack on mobile */}
+      <div className="flex flex-col lg:flex-row min-h-[380px]">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 bg-slate-900/80 p-8 sm:p-14 rounded-3xl border border-slate-800 backdrop-blur-xl shadow-2xl relative overflow-hidden group">
-          
-          {/* Animated Glow Border Accent */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#E31E24] to-transparent"></div>
+        {/* LEFT — Dark panel */}
+        <div className="relative flex-1 flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-16 bg-[#0F1520] overflow-hidden">
+          {/* Subtle grid */}
+          <div className="absolute inset-0 bg-grid-pattern-dark opacity-60 pointer-events-none" />
+          {/* Ambient red glow */}
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(227,30,36,0.12) 0%, transparent 70%)' }}
+          />
 
-          <div className="space-y-4 text-center lg:text-left">
-            <span className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#E31E24] bg-red-950/60 border border-red-800/50 px-3.5 py-1 rounded-full font-outfit">
-              <Sparkles className="w-3.5 h-3.5" />
-              Partner With Turbo Tech Today
-            </span>
-
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-outfit text-white tracking-tight leading-tight">
-              Ready to Execute Your Next <br className="hidden sm:inline" />
-              <span className="text-gradient-red">Industrial Project?</span>
+          <div className="relative z-10 max-w-xl">
+            <p className="eyebrow mb-6" style={{ color: 'rgba(227,30,36,0.8)' }}>
+              Partner With Turbo Tech
+            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-outfit text-white tracking-tight leading-[1.08] mb-5">
+              Ready to Execute Your
+              <br />
+              Next Industrial Project?
             </h2>
-            
-            <p className="text-slate-400 text-sm sm:text-base max-w-2xl">
-              Connect with our industrial engineering team for turnkey fabrication, piping, plant maintenance, certified manpower supply, or training institute inquiries.
+            <p className="text-white/45 text-sm sm:text-base max-w-md leading-relaxed">
+              Connect with our engineering team for turnkey fabrication, piping, plant
+              maintenance, certified manpower, or training institute inquiries.
             </p>
           </div>
+        </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 shrink-0">
-            <button
-              onClick={onOpenQuote}
-              className="btn-primary-red btn-magnetic px-8 py-4 rounded-full text-sm font-bold flex items-center gap-2 font-outfit"
-            >
-              <span>Get a Free Quote</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+        {/* RIGHT — Red panel */}
+        <div
+          className="relative flex flex-col items-start justify-center px-8 sm:px-12 lg:px-16 py-16 overflow-hidden"
+          style={{
+            background: 'linear-gradient(135deg, #E31E24 0%, #C81419 100%)',
+            minWidth: 'min(100%, 420px)',
+          }}
+        >
+          {/* Pattern overlay */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-10"
+            style={{
+              backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px)',
+              backgroundSize: '24px 24px',
+            }}
+          />
+          {/* Diagonal slash decoration */}
+          <div className="absolute -top-12 -right-12 w-40 h-80 bg-white/5 rotate-12 pointer-events-none" />
 
+          <div className="relative z-10 w-full">
+            {/* Large phone number */}
             <a
               href="tel:+916351149073"
-              className="px-8 py-4 rounded-full text-sm font-bold border border-slate-700 bg-slate-800/90 text-slate-200 hover:bg-white hover:text-slate-900 hover:border-white transition-all flex items-center gap-2 font-outfit"
+              className="block text-3xl sm:text-4xl font-black font-outfit text-white tracking-tight leading-none mb-2 hover:opacity-80 transition-opacity"
             >
-              <PhoneCall className="w-4 h-4 text-[#E31E24]" />
-              <span>+91 63511 49073</span>
+              +91 63511 49073
             </a>
-          </div>
+            <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-8">
+              Call us anytime
+            </p>
 
+            {/* Rule */}
+            <div className="w-full h-px bg-white/20 mb-8" />
+
+            {/* Email */}
+            <a
+              href="mailto:santosh.turbotech@gmail.com"
+              className="block text-sm font-semibold text-white/70 hover:text-white transition-colors mb-8"
+            >
+              santosh.turbotech@gmail.com
+            </a>
+
+            {/* CTA Button */}
+            <button
+              onClick={onOpenQuote}
+              className="inline-flex items-center gap-3 bg-white text-[#E31E24] font-bold text-sm px-7 py-4 hover:bg-[#0F1520] hover:text-white transition-all duration-300 group font-outfit"
+            >
+              <span>Get a Free Quote</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
         </div>
+
       </div>
     </section>
   );

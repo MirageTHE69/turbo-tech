@@ -3,44 +3,30 @@
 import React from 'react';
 import { Hammer, Award, Wrench, Briefcase } from 'lucide-react';
 
-export default function TrainingHighlightsBar() {
-  const items = [
-    {
-      title: 'Hands-on Workshop',
-      desc: '80% practical training in live industrial setup.',
-      icon: Hammer,
-    },
-    {
-      title: 'Certified Instructors',
-      desc: 'Senior engineers with 15+ years site experience.',
-      icon: Award,
-    },
-    {
-      title: 'Modern Equipment',
-      desc: 'Train on industrial-grade welding rigs & tools.',
-      icon: Wrench,
-    },
-    {
-      title: '100% Placement Support',
-      desc: 'Direct hiring partnerships with top contractors.',
-      icon: Briefcase,
-    },
-  ];
+const items = [
+  { icon: Hammer,   title: 'Hands-on Workshop',       desc: '80% practical training in a live industrial setup.' },
+  { icon: Award,    title: 'Certified Instructors',    desc: 'Senior engineers with 15+ years of site experience.' },
+  { icon: Wrench,   title: 'Modern Equipment',         desc: 'Train on industrial-grade welding rigs and tools.' },
+  { icon: Briefcase, title: '100% Placement Support',  desc: 'Direct hiring partnerships with top contractors.' },
+];
 
+export default function TrainingHighlightsBar() {
   return (
-    <section className="py-12 bg-white border-y border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 lg:divide-x divide-slate-200">
-          {items.map((item, idx) => {
-            const IconComponent = item.icon;
+    <section className="bg-[#F5F4F0] border-t border-[#E2DDD8]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#E2DDD8]">
+          {items.map((item, i) => {
+            const Icon = item.icon;
             return (
-              <div key={idx} className={`flex items-start gap-4 pt-4 sm:pt-0 ${idx > 0 ? 'lg:pl-6' : ''}`}>
-                <div className="w-12 h-12 rounded-full border border-red-200 bg-red-50 text-[#E31E24] flex items-center justify-center shrink-0">
-                  <IconComponent className="w-6 h-6" />
+              <div key={i} className="bg-[#F5F4F0] px-8 py-8 flex items-start gap-5 group hover:bg-white transition-colors">
+                <div className="shrink-0 w-10 h-10 border border-[#E2DDD8] text-[#E31E24] flex items-center justify-center group-hover:bg-[#E31E24] group-hover:border-[#E31E24] group-hover:text-white transition-all duration-300">
+                  <Icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-[#0F1520] font-outfit">{item.title}</h4>
-                  <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">{item.desc}</p>
+                  <h4 className="text-sm font-bold text-[#0F1520] font-outfit mb-1 group-hover:text-[#E31E24] transition-colors">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             );

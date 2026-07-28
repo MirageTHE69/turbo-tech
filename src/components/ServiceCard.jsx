@@ -1,85 +1,155 @@
 'use client';
 
-import React from 'react';
-import { ArrowRight, Wrench } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { ArrowRight } from 'lucide-react';
 import { getIcon } from '@/lib/icons';
+import { Wrench } from 'lucide-react';
 
-export default function ServiceCard({
-  service,
-  index = 0,
-  onActionClick,
-  actionText = 'Learn More',
-  className = '',
-}) {
+const defaultImages = [
+  '/images/hero_plant.png',
+  '/images/welder.png',
+  '/images/project_piping.png',
+  '/images/fire_safety.png',
+  '/images/civil_construction.png',
+  '/images/about_team.png',
+];
+
+// ── Individual editorial service panel ──────────────────────────────────────
+function ServicePanel({ service, index, actionText = 'Learn More', onActionClick }) {
   const IconComponent = getIcon(service.iconName, Wrench);
-
-  const defaultImages = [
-    '/images/hero_plant.png',
-    '/images/welder.png',
-    '/images/project_piping.png',
-    '/images/fire_safety.png',
-    '/images/civil_construction.png',
-    '/images/about_team.png',
-  ];
   const cardImage = service.image || defaultImages[index % defaultImages.length];
+  const num = String(index + 1).padStart(2, '0');
 
   return (
-    <div
-      className={`bg-white rounded-[24px] border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-red-100 transition-all duration-300 flex flex-col justify-between h-full group relative overflow-hidden ${className}`}
-    >
-      {/* Top Image Frame */}
-      <div className="relative h-48 sm:h-52 w-full overflow-hidden shrink-0 bg-slate-900 rounded-t-[24px]">
+    <div className="service-panel group flex flex-col h-full">
+      {/* Image */}
+      <div className="relative h-56 sm:h-64 overflow-hidden bg-slate-900 shrink-0">
         <img
           src={cardImage}
           alt={service.title}
-          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+          className="service-panel-img w-full h-full object-cover img-vivid"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
+
+        {/* Index watermark on image */}
+        <span className="absolute top-4 right-4 text-5xl font-black font-outfit text-white/10 leading-none select-none">
+          {num}
+        </span>
       </div>
 
-      {/* Overlapping Solid Red Square Icon Box */}
-      <div className="relative -mt-6 ml-6 z-20 w-12 h-12 rounded-xl bg-[#E52323] text-white flex items-center justify-center shadow-lg shadow-red-600/30 font-bold group-hover:scale-110 transition-transform duration-300">
-        <IconComponent className="w-6 h-6 text-white" />
-      </div>
+      {/* Content */}
+      <div className="flex flex-col flex-1 p-7 sm:p-8 bg-white relative">
+        {/* Tiny red line top accent that grows on hover */}
+        <div className="absolute top-0 left-0 h-[2px] w-0 bg-[#E31E24] group-hover:w-full transition-all duration-500 ease-out" />
 
-      {/* Card Content Body */}
-      <div className="p-6 sm:p-7 pt-4 flex-1 flex flex-col justify-between bg-white">
-        <div>
-          <h3 className="text-lg font-bold text-[#0F172A] font-outfit leading-snug mb-3 group-hover:text-[#E52323] transition-colors mt-2">
+        {/* Icon + Title row */}
+        <div className="flex items-start gap-5 mb-4">
+          <div className="shrink-0 w-11 h-11 bg-[#E31E24]/8 border border-[#E31E24]/15 flex items-center justify-center text-[#E31E24] group-hover:bg-[#E31E24] group-hover:text-white transition-all duration-300">
+            <IconComponent className="w-5 h-5" />
+          </div>
+          <h3 className="text-lg sm:text-xl font-bold text-[#0F1520] font-outfit leading-snug group-hover:text-[#E31E24] transition-colors duration-300 pt-1">
             {service.title}
           </h3>
-          <p className="text-slate-500 text-xs sm:text-sm leading-relaxed line-clamp-3 font-normal">
-            {service.desc}
-          </p>
         </div>
 
-        {/* Footer Action Row */}
-        <div className="pt-5 mt-5 border-t border-slate-100/90 flex items-center justify-between">
+        {/* Thin divider */}
+        <div className="w-full h-px bg-[#E2DDD8] mb-4" />
+
+        <p className="text-slate-500 text-sm leading-relaxed line-clamp-3 flex-1">
+          {service.desc}
+        </p>
+
+        {/* Footer */}
+        <div className="mt-6 flex items-center justify-between">
           {onActionClick ? (
-            <button
-              onClick={onActionClick}
-              className="text-xs sm:text-sm font-bold text-[#0F172A] group-hover:text-[#E52323] transition-colors font-outfit cursor-pointer"
-            >
-              {actionText}
+            <button onClick={onActionClick} className="arrow-link font-outfit">
+              <span>{actionText}</span>
+              <ArrowRight className="w-4 h-4" />
             </button>
           ) : (
-            <a
-              href="/services"
-              className="text-xs sm:text-sm font-bold text-[#0F172A] group-hover:text-[#E52323] transition-colors font-outfit"
-            >
-              {actionText}
+            <a href="/services" className="arrow-link font-outfit">
+              <span>{actionText}</span>
+              <ArrowRight className="w-4 h-4" />
             </a>
           )}
-
-          <div className="w-9 h-9 rounded-full bg-red-50 text-[#E52323] flex items-center justify-center group-hover:bg-[#E52323] group-hover:text-white transition-all shadow-sm">
-            <ArrowRight className="w-4 h-4" />
-          </div>
         </div>
       </div>
-
-      {/* Bottom Red Accent Line on Hover */}
-      <div className="w-full h-[3px] bg-transparent group-hover:bg-[#E52323] transition-all duration-300" />
     </div>
   );
 }
 
+// ── Services Section ─────────────────────────────────────────────────────────
+export default function ServicesSection() {
+  const sectionRef = useRef(null);
+
+  // Scroll reveal
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in-view');
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    const els = sectionRef.current?.querySelectorAll('.scroll-reveal');
+    els?.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  return null; // Replaced by ServicesSection below
+}
+
+// Named export for actual usage
+export function ServicesSectionFull({ services }) {
+  const sectionRef = useRef(null);
+  const featured = services.slice(0, 4);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('in-view'); }),
+      { threshold: 0.1 }
+    );
+    sectionRef.current?.querySelectorAll('.scroll-reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section id="services" ref={sectionRef} className="py-24 lg:py-32 bg-[#F5F4F0]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 scroll-reveal">
+          <div>
+            <p className="eyebrow mb-4">Our Services</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-black text-[#0F1520] font-outfit leading-[1.06] tracking-tight">
+              What We Build
+              <br />
+              <span className="text-[#E31E24]">For Industry.</span>
+            </h2>
+          </div>
+
+          <a
+            href="/services"
+            className="inline-flex items-center gap-3 self-start md:self-auto shrink-0 border border-[#D0CAC4] bg-white px-6 py-3 text-sm font-bold text-[#0F1520] hover:border-[#0F1520] transition-all duration-300 group"
+          >
+            <span>View All Services</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </div>
+
+        {/* 2×2 Editorial Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#E2DDD8]">
+          {featured.map((service, i) => (
+            <div key={service.id || i} className={`scroll-reveal scroll-reveal-delay-${i + 1} bg-white`}>
+              <ServicePanel service={service} index={i} actionText="Learn More" />
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}

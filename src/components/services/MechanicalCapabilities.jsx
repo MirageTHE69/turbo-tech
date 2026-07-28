@@ -29,13 +29,15 @@ export default function MechanicalCapabilities() {
   const capabilitiesDouble = [...capabilities, ...capabilities];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#0B0D11] text-white border-y border-white/5 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#E31E24] mb-4">
+    <section className="py-16 lg:py-28 bg-[#0B0D11] text-white border-y border-white/5 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-10 mb-10 sm:mb-12">
+        <p className="eyebrow mb-4" style={{ color: 'rgba(227,30,36,0.85)' }}>
           Detailed Capabilities
         </p>
-        <h2 className="text-4xl sm:text-5xl font-black font-outfit text-white leading-[1.08]">
-          Mechanical Engineering<br />Execution Spectrum.
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-outfit text-white leading-[1.08]">
+          Mechanical Engineering
+          <br className="hidden sm:block" />
+          {' '}Execution Spectrum.
         </h2>
       </div>
 

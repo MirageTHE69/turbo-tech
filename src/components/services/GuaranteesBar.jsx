@@ -3,44 +3,30 @@
 import React from 'react';
 import { ShieldCheck, Award, Clock, Headphones } from 'lucide-react';
 
-export default function GuaranteesBar() {
-  const items = [
-    {
-      title: 'Safety First',
-      desc: 'Zero compromise on safety at every step.',
-      icon: ShieldCheck,
-    },
-    {
-      title: 'Quality Assured',
-      desc: 'International standards and best practices.',
-      icon: Award,
-    },
-    {
-      title: 'On-Time Delivery',
-      desc: 'Committed to delivering on time, every time.',
-      icon: Clock,
-    },
-    {
-      title: '24/7 Support',
-      desc: 'Always here to support your operations.',
-      icon: Headphones,
-    },
-  ];
+const items = [
+  { icon: ShieldCheck, title: 'Safety First',      desc: 'Zero compromise on HSE at every project stage.' },
+  { icon: Award,       title: 'Quality Assured',   desc: 'ISO certified — international standards applied.' },
+  { icon: Clock,       title: 'On-Time Delivery',  desc: 'Committed to schedule, every time, every project.' },
+  { icon: Headphones,  title: '24/7 Support',      desc: 'Always here to support your critical operations.' },
+];
 
+export default function GuaranteesBar() {
   return (
-    <section className="py-12 bg-white border-y border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 lg:divide-x divide-slate-200">
-          {items.map((item, idx) => {
-            const IconComponent = item.icon;
+    <section className="bg-[#F5F4F0] border-t border-[#E2DDD8]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#E2DDD8]">
+          {items.map((item, i) => {
+            const Icon = item.icon;
             return (
-              <div key={idx} className={`flex items-start gap-4 pt-4 sm:pt-0 ${idx > 0 ? 'lg:pl-6' : ''}`}>
-                <div className="w-12 h-12 rounded-full border border-red-200 bg-red-50 text-[#E31E24] flex items-center justify-center shrink-0">
-                  <IconComponent className="w-6 h-6" />
+              <div key={i} className="bg-[#F5F4F0] px-8 py-8 flex items-start gap-5 group hover:bg-white transition-colors">
+                <div className="shrink-0 w-10 h-10 border border-[#E2DDD8] text-[#E31E24] flex items-center justify-center group-hover:bg-[#E31E24] group-hover:border-[#E31E24] group-hover:text-white transition-all duration-300">
+                  <Icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-[#0F1520] font-outfit">{item.title}</h4>
-                  <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">{item.desc}</p>
+                  <h4 className="text-sm font-bold text-[#0F1520] font-outfit mb-1 group-hover:text-[#E31E24] transition-colors">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             );
