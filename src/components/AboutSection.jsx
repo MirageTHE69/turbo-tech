@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle } from 'lucide-react';
 const pillars = [
   'End-to-end EPC execution across India',
   'ISO 9001:2015 certified processes',
-  'In-house certified workforce of 300+',
+  'In-house certified workforce of 150+',
 ];
 
 export default function AboutSection() {
@@ -104,7 +104,7 @@ export default function AboutSection() {
                 </div>
                 <div className="bg-[#E31E24] px-4 py-3 sm:px-5 sm:py-3.5 shadow-xl text-white">
                   <div className="text-2xl sm:text-3xl font-black font-outfit leading-none">
-                    500+
+                    150+
                   </div>
                   <div className="text-[10px] sm:text-[11px] font-bold mt-1 uppercase tracking-wide opacity-90">
                     Projects Done
@@ -130,9 +130,7 @@ export default function AboutSection() {
             <div className="w-10 h-[2px] bg-[#E31E24]" />
 
             <p className="text-slate-500 text-sm sm:text-base leading-[1.8] max-w-md">
-              From EPC execution to fabrication, plant maintenance, and certified
-              manpower supply — Turbo Tech delivers end-to-end engineering solutions
-              across India with a proven 13-year track record.
+              From EPC execution to fabrication, plant maintenance, and international &amp; global manpower solutions — Turbo Tech delivers end-to-end engineering solutions across India with a proven 13-year track record.
             </p>
 
             {/* Pillar checklist */}
@@ -144,18 +142,6 @@ export default function AboutSection() {
                 </li>
               ))}
             </ul>
-
-            {/* Inline metrics */}
-            <div className="flex items-stretch gap-0 border border-[#E2DDD8] w-fit">
-              <div className="px-5 py-4 sm:px-6 sm:py-5 border-r border-[#E2DDD8]">
-                <div className="text-xl sm:text-2xl font-black font-outfit text-[#0F1520]">₹ Crore+</div>
-                <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-0.5">Projects Value</div>
-              </div>
-              <div className="px-5 py-4 sm:px-6 sm:py-5">
-                <div className="text-xl sm:text-2xl font-black font-outfit text-[#0F1520]">15 States</div>
-                <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-0.5">Operational Reach</div>
-              </div>
-            </div>
 
             {/* CTA links */}
             <div className="flex flex-wrap items-center gap-5 pt-1">

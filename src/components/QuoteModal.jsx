@@ -130,12 +130,13 @@ export default function QuoteModal({ isOpen, onClose }) {
                     <option>Mechanical Construction</option>
                     <option>Structural Fabrication & Erection</option>
                     <option>Industrial Piping</option>
+                    <option>Pipe Welding & NDT Testing Facility</option>
                     <option>Plant Maintenance</option>
                     <option>Equipment Installation</option>
                     <option>Shutdown Projects</option>
                     <option>Civil Construction</option>
                     <option>Fire & Safety Solutions</option>
-                    <option>Industrial Manpower Supply</option>
+                    <option>International & Global Manpower Supply</option>
                     <option>General Industrial Supply</option>
                     <option>Welding & Fitter Training Institute</option>
                   </select>

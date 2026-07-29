@@ -44,7 +44,7 @@ export default function ProjectsHero({ onOpenQuote }) {
             {/* Inline stats */}
             <div className="ph-anim flex items-stretch border border-[#E2DDD8] w-fit opacity-0">
               {[
-                { n: '500+', l: 'Projects Done' },
+                { n: '150+', l: 'Projects Done' },
                 { n: '13+',  l: 'Years Active' },
                 { n: '20+',  l: 'Industries Served' },
               ].map((s, i) => (
@@ -75,7 +75,7 @@ export default function ProjectsHero({ onOpenQuote }) {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-6 left-6 bg-[#E31E24] px-5 py-3">
                 <span className="text-[10px] font-black text-white uppercase tracking-[0.18em] font-outfit">
-                  500+ Projects Delivered
+                  150+ Projects Delivered
                 </span>
               </div>
             </div>

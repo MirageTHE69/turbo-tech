@@ -35,8 +35,8 @@ export default function Hero({ onOpenQuote }) {
 
   const stats = [
     { number: '13+',  label: 'Years Experience'    },
-    { number: '500+', label: 'Projects Delivered'  },
-    { number: '300+', label: 'Certified Workforce' },
+    { number: '150+', label: 'Projects Delivered'  },
+    { number: '150+', label: 'Certified Workforce' },
   ];
 
   // ── Force autoplay on mobile ──────────────────────────────
@@ -203,7 +203,7 @@ export default function Hero({ onOpenQuote }) {
 
               {/* Subtitle */}
               <p className="hero-sub text-white/50 text-sm sm:text-base max-w-lg leading-relaxed mb-8 sm:mb-10 opacity-0">
-                EPC execution · Mechanical fabrication · Certified manpower —
+                EPC execution · Mechanical fabrication · International &amp; global manpower solutions —
                 delivered with precision across India.
               </p>
 

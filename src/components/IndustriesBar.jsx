@@ -2,13 +2,15 @@
 
 import React from 'react';
 
-const clients = [
-  'HPCL',
-  'IOCL',
-  'MEIL',
-  'NSCPL',
-  'ArcelorMittal Nippon Steel',
-  'Mansi Ganga Engineers',
+const clientLogos = [
+  { name: 'Mansi Ganga Builders & Engineers', logo: '/images/clients/mansi_ganga.jpg' },
+  { name: 'MEIL - Megha Engineering & Infrastructures Ltd', logo: '/images/clients/meil.jpg' },
+  { name: 'AFCONS Infrastructure', logo: '/images/clients/afcons.jpg' },
+  { name: 'NUBERG EPC', logo: '/images/clients/nuberg.png' },
+  { name: 'THERMAX', logo: '/images/clients/thermax.png' },
+  { name: 'HPCL', logo: null, text: 'HPCL' },
+  { name: 'IOCL', logo: null, text: 'IOCL' },
+  { name: 'ArcelorMittal Nippon Steel', logo: null, text: 'AM/NS INDIA' },
 ];
 
 const sectors = [
@@ -24,7 +26,7 @@ const sectors = [
   'Fabrication',
 ];
 
-const clientsDouble = [...clients, ...clients];
+const clientsDouble = [...clientLogos, ...clientLogos, ...clientLogos];
 const sectorsDouble = [...sectors, ...sectors];
 
 export default function IndustriesBar() {
@@ -37,10 +39,6 @@ export default function IndustriesBar() {
           <p className="eyebrow" style={{ color: '#8B8580' }}>
             Trusted Execution Partner For Industry Leaders
           </p>
-          {/* Thin horizontal count */}
-          <span className="text-[10px] font-bold tracking-widest uppercase text-[#C5BFB9] hidden sm:block">
-            {clients.length} Major Clients
-          </span>
         </div>
 
         {/* Divider */}
@@ -48,15 +46,26 @@ export default function IndustriesBar() {
           <div className="w-full h-px bg-[#E2DDD8]" />
         </div>
 
-        {/* Client marquee — large names */}
-        <div className="marquee-outer">
-          <div className="marquee-track" style={{ animationDuration: '80s' }}>
-            {clientsDouble.map((name, i) => (
-              <div key={i} className="flex items-center shrink-0 mr-16">
-                <span className="text-xl sm:text-2xl font-black font-outfit text-[#0F1520]/15 hover:text-[#0F1520]/50 transition-colors duration-400 tracking-tight cursor-default whitespace-nowrap">
-                  {name}
-                </span>
-                <span className="ml-16 w-1.5 h-1.5 rounded-full bg-[#E31E24]/40 shrink-0" />
+        {/* Client marquee — logos */}
+        <div className="marquee-outer py-2">
+          <div className="marquee-track flex items-center" style={{ animationDuration: '45s' }}>
+            {clientsDouble.map((c, i) => (
+              <div key={i} className="flex items-center shrink-0 mr-12 sm:mr-16 group">
+                {c.logo ? (
+                  <div className="h-14 sm:h-16 px-6 py-2.5 bg-white border border-[#E2DDD8] rounded-xl flex items-center justify-center shadow-sm group-hover:border-[#E31E24] group-hover:shadow-md transition-all duration-300">
+                    <img
+                      src={c.logo}
+                      alt={c.name}
+                      className="max-h-10 sm:max-h-11 w-auto max-w-[140px] sm:max-w-[170px] object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                ) : (
+                  <div className="h-14 sm:h-16 px-6 py-2.5 bg-white border border-[#E2DDD8] rounded-xl flex items-center justify-center shadow-sm group-hover:border-[#E31E24] group-hover:shadow-md transition-all duration-300">
+                    <span className="text-base sm:text-lg font-black font-outfit text-[#0F1520]/80 group-hover:text-[#E31E24] transition-colors tracking-tight whitespace-nowrap">
+                      {c.text}
+                    </span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -64,7 +73,7 @@ export default function IndustriesBar() {
 
         {/* Sector tags marquee — reversed */}
         <div className="marquee-outer">
-          <div className="marquee-track" style={{ animationDirection: 'reverse', animationDuration: '60s' }}>
+          <div className="marquee-track" style={{ animationDirection: 'reverse', animationDuration: '50s' }}>
             {sectorsDouble.map((name, i) => (
               <div key={i} className="flex items-center shrink-0 mr-10">
                 <span className="text-[11px] font-bold font-outfit text-[#8B8580] hover:text-[#E31E24] transition-colors duration-300 uppercase tracking-[0.18em] whitespace-nowrap">

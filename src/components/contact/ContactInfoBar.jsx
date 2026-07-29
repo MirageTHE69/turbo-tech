@@ -10,16 +10,15 @@ const cards = [
     lines: ['Koindi Gosai Pa (Near Brahm Sthan),', 'Tamkuhi Raj, Kushinagar, UP – 274407'],
   },
   {
-    title: 'Phone',
-    icon: Phone,
-    lines: ['+91 63511 49073', 'Direct Engineering Helpline'],
-    href: 'tel:+916351149073',
+    title: 'Branch Office',
+    icon: MapPin,
+    lines: ['Bajwa, Vadodara,', 'Gujarat, India'],
   },
   {
-    title: 'Email',
+    title: 'Phone & Email',
     icon: Mail,
-    lines: ['santosh.turbotech@gmail.com', 'Project Quotes & Manpower Requests'],
-    href: 'mailto:santosh.turbotech@gmail.com',
+    lines: ['+91 63511 49073', 'info@turbotechglobal.com'],
+    href: 'mailto:info@turbotechglobal.com',
   },
   {
     title: 'Working Hours',

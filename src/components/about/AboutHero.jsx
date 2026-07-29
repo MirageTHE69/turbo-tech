@@ -37,16 +37,17 @@ export default function AboutHero() {
 
             <p className="ah-anim text-slate-500 text-base leading-[1.8] max-w-md opacity-0">
               Turbo Tech is an Indian industrial engineering & infrastructure company
+              From a vision established in 2011 to a leading industrial contractor across India, Turbo Tech is committed to
               delivering mechanical construction, structural fabrication, piping systems,
-              plant maintenance, manpower supply, civil works, and technical training.
+              plant maintenance, international &amp; global manpower solutions, civil works, and technical training.
             </p>
 
             {/* Metrics strip */}
             <div className="ah-anim flex items-stretch border border-[#E2DDD8] w-fit opacity-0">
               {[
                 { n: '13+',  l: 'Years Active'         },
-                { n: '500+', l: 'Projects Delivered'    },
-                { n: '300+', l: 'Certified Technicians' },
+                { n: '150+', l: 'Projects Delivered'    },
+                { n: '150+', l: 'Certified Technicians' },
                 { n: '100%', l: 'HSE Commitment'        },
               ].map((s, i) => (
                 <div key={i} className={`px-5 py-4 ${i < 3 ? 'border-r border-[#E2DDD8]' : ''}`}>

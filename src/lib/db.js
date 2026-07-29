@@ -9,7 +9,7 @@ const initialData = {
     { id: 'srv-2', number: '02', title: 'Fabrication & Erection', desc: 'Heavy structural fabrication and precision installation for industrial facilities.', iconName: 'Layers' },
     { id: 'srv-3', number: '03', title: 'Industrial Piping', desc: 'Pipe fabrication, installation, hydro testing and commissioning.', iconName: 'GitCommit' },
     { id: 'srv-4', number: '04', title: 'Plant Maintenance', desc: 'Preventive and shutdown maintenance for smooth plant operations.', iconName: 'Settings' },
-    { id: 'srv-5', number: '05', title: 'Manpower Supply', desc: 'Skilled and certified manpower including welders, fitters, engineers and technicians.', iconName: 'Users' },
+    { id: 'srv-5', number: '05', title: 'International & Global Manpower Solutions', desc: 'Skilled and certified manpower including welders, fitters, engineers and technicians with globally supported manpower service deployment.', iconName: 'Users' },
     { id: 'srv-6', number: '06', title: 'Training Institute', desc: 'Industry-oriented technical training to build skilled professionals.', iconName: 'GraduationCap' }
   ],
   projects: [

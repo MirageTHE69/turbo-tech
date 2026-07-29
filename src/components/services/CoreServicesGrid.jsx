@@ -13,12 +13,16 @@ if (typeof window !== 'undefined') {
 }
 
 const defaultImages = [
-  '/images/hero_plant.png',
-  '/images/welder.png',
-  '/images/project_piping.png',
-  '/images/fire_safety.png',
+  '/images/mechanical_construction.jpg',
+  '/images/structural_fabrication.jpg',
+  '/images/industrial_piping.jpg',
+  '/images/plant_maintenance.jpg',
+  '/images/equipment_installation.jpg',
+  '/images/shutdown_projects.jpg',
   '/images/civil_construction.png',
+  '/images/fire_safety.png',
   '/images/about_team.png',
+  '/images/hero_plant.png',
 ];
 
 export default function CoreServicesGrid({ onOpenQuote }) {

@@ -6,7 +6,7 @@
       "title": "Mechanical Construction",
       "desc": "Complete industrial mechanical construction including fabrication, erection, installation, alignment, and commissioning of industrial equipment.",
       "iconName": "Wrench",
-      "image": "/images/hero_plant.png"
+      "image": "/images/mechanical_construction.jpg"
     },
     {
       "id": "srv-2",
@@ -14,7 +14,7 @@
       "title": "Structural Fabrication & Erection",
       "desc": "Design, fabrication, assembly, and erection of heavy industrial steel structures, process platforms, and support systems.",
       "iconName": "Layers",
-      "image": "/images/welder.png"
+      "image": "/images/structural_fabrication.jpg"
     },
     {
       "id": "srv-3",
@@ -22,7 +22,7 @@
       "title": "Industrial Piping",
       "desc": "Supply, fabrication, installation, hydro testing, pressure testing, and commissioning of MS, SS, CS, HDPE, and alloy process pipelines.",
       "iconName": "GitCommit",
-      "image": "/images/project_piping.png"
+      "image": "/images/industrial_piping.jpg"
     },
     {
       "id": "srv-4",
@@ -30,7 +30,7 @@
       "title": "Plant Maintenance",
       "desc": "Preventive, shutdown, and corrective maintenance, mechanical overhauling, equipment servicing, and annual maintenance contracts.",
       "iconName": "Settings",
-      "image": "/images/about_team.png"
+      "image": "/images/plant_maintenance.jpg"
     },
     {
       "id": "srv-5",
@@ -38,7 +38,7 @@
       "title": "Equipment Installation",
       "desc": "Installation of Pressure Vessels, Heat Exchangers, Boilers, Storage Tanks, Columns, Reactors, Rotating, and Static Equipment.",
       "iconName": "Cpu",
-      "image": "/images/hero_plant.png"
+      "image": "/images/equipment_installation.jpg"
     },
     {
       "id": "srv-6",
@@ -46,7 +46,7 @@
       "title": "Shutdown Projects",
       "desc": "Turnkey shutdown planning and execution including certified manpower, piping, equipment replacement, and fast commissioning.",
       "iconName": "Clock",
-      "image": "/images/welder.png"
+      "image": "/images/shutdown_projects.jpg"
     },
     {
       "id": "srv-7",
@@ -67,8 +67,8 @@
     {
       "id": "srv-9",
       "number": "09",
-      "title": "Industrial Manpower Supply",
-      "desc": "Certified Engineers, Project Managers, Supervisors, Quality & Safety Officers, Fabricators, IBR Welders, Fitters, and Riggers.",
+      "title": "International & Global Manpower Solutions",
+      "desc": "Certified Engineers, Project Managers, Supervisors, Quality & Safety Officers, Fabricators, IBR Welders, Fitters, and Riggers with globally supported manpower service deployment.",
       "iconName": "Users",
       "image": "/images/about_team.png"
     },

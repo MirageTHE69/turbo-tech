@@ -5,20 +5,20 @@ import Logo from './Logo';
 import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 
 const quickLinks = [
-  { label: 'About Us',          href: '/about'    },
-  { label: 'Services',          href: '/services' },
-  { label: 'Projects',          href: '/projects' },
-  { label: 'Training Institute', href: '/training' },
-  { label: 'Contact',           href: '/contact'  },
+  { label: 'About Us',               href: '/about'            },
+  { label: 'Services',               href: '/services'         },
+  { label: 'Projects',               href: '/projects'         },
+  { label: 'Training and Institute', href: '/training'         },
+  { label: 'Testing Facility',       href: '/testing-facility' },
+  { label: 'Contact',                href: '/contact'          },
 ];
 
 const services = [
-  { label: 'Mechanical Construction', href: '/services' },
-  { label: 'Fabrication & Erection',  href: '/services' },
-  { label: 'Industrial Piping',       href: '/services' },
-  { label: 'Fire & Safety',          href: '/services' },
-  { label: 'Civil Works',            href: '/services' },
-  { label: 'Manpower Supply',        href: '/services' },
+  { label: 'Mechanical Construction',              href: '/services' },
+  { label: 'Fabrication & Erection',               href: '/services' },
+  { label: 'Industrial Piping',                    href: '/services' },
+  { label: 'Pipe Welding Testing Facility',        href: '/testing-facility' },
+  { label: 'International & Global Manpower',     href: '/services' },
 ];
 
 const socials = [
@@ -54,12 +54,21 @@ export default function Footer() {
             India&apos;s Tomorrow.
           </h2>
 
-          <div className="shrink-0">
-            <p className="text-white/40 text-xs mb-3 uppercase tracking-widest font-semibold">Head Office</p>
-            <p className="text-sm text-white/60 leading-relaxed max-w-xs">
-              Kohid Gope Patti, Near Brahm Sthan,<br />
-              Tamkuhi Raj, Kushinagar, UP – 274407
-            </p>
+          <div className="flex flex-col sm:flex-row gap-6 shrink-0">
+            <div>
+              <p className="text-white/40 text-xs mb-2 uppercase tracking-widest font-semibold">Head Office</p>
+              <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
+                Kohid Gope Patti, Near Brahm Sthan,<br />
+                Tamkuhi Raj, Kushinagar, UP – 274407
+              </p>
+            </div>
+            <div>
+              <p className="text-white/40 text-xs mb-2 uppercase tracking-widest font-semibold">Branch Office</p>
+              <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
+                Bajwa, Vadodara,<br />
+                Gujarat, India
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -72,8 +81,8 @@ export default function Footer() {
           <div className="space-y-5 lg:col-span-1">
             <Logo light />
             <p className="text-white/35 text-xs sm:text-sm leading-relaxed max-w-xs">
-              Industrial engineering, fabrication &amp; skill training — built for
-              India&apos;s heavy industries.
+              Industrial engineering, fabrication, testing facility &amp; skill training — built for
+              heavy industries.
             </p>
 
             {/* Socials */}
@@ -116,7 +125,7 @@ export default function Footer() {
           {/* Col 3: Services */}
           <div className="space-y-5">
             <h4 className="text-[10px] font-black text-white uppercase tracking-[0.2em] font-outfit">
-              Services
+              Services &amp; Testing
             </h4>
             <ul className="space-y-3">
               {services.map((link) => (
@@ -142,8 +151,8 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#E31E24] shrink-0 mt-0.5" />
                 <span className="text-xs sm:text-sm leading-relaxed text-white/35">
-                  Kohid Gope Patti, Near Brahm Sthan,<br />
-                  Tamkuhi Raj, Kushinagar, UP – 274407
+                  <strong>Head:</strong> Kushinagar, UP – 274407<br />
+                  <strong>Branch:</strong> Bajwa, Vadodara, Gujarat
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -154,8 +163,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#E31E24] shrink-0" />
-                <a href="mailto:santosh.turbotech@gmail.com" className="text-xs sm:text-sm text-white/35 hover:text-white transition-colors">
-                  santosh.turbotech@gmail.com
+                <a href="mailto:info@turbotechglobal.com" className="text-xs sm:text-sm text-white/35 hover:text-white transition-colors">
+                  info@turbotechglobal.com
                 </a>
               </li>
             </ul>

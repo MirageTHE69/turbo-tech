@@ -1,43 +1,49 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Logo from './Logo';
-import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
-export default function Header({ onOpenQuote, transparentOnTop = true }) {
+export default function Header({ onOpenQuote, transparentOnTop }) {
+  const pathname = usePathname();
   const [scrolled, setScrolled]             = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [mounted, setMounted]               = useState(false);
+
+  // If transparentOnTop is not explicitly passed, default true ONLY for home page '/'
+  const isHomePage = pathname === '/';
+  const allowTransparent = transparentOnTop !== undefined ? transparentOnTop : isHomePage;
 
   useEffect(() => {
     setMounted(true);
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
       setScrollProgress(totalScroll > 0 ? (window.scrollY / totalScroll) * 100 : 0);
-      setScrolled(window.scrollY > 40);
+      setScrolled(window.scrollY > 30);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { label: 'About',    href: '/about'      },
-    { label: 'Services', href: '/services'   },
-    { label: 'Projects', href: '/projects'   },
-    { label: 'Training', href: '/training'   },
-    { label: 'Industries', href: '/#industries' },
-    { label: 'Contact',  href: '/contact'    },
+    { label: 'About',                  href: '/about'            },
+    { label: 'Services',               href: '/services'         },
+    { label: 'Projects',               href: '/projects'         },
+    { label: 'Training and Institute', href: '/training'         },
+    { label: 'Testing Facility',       href: '/testing-facility' },
+    { label: 'Contact',                href: '/contact'          },
   ];
 
-  const isDark = !scrolled && transparentOnTop;
+  const isDark = !scrolled && allowTransparent;
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
         isDark
           ? 'bg-transparent py-5'
-          : 'bg-white/96 backdrop-blur-xl shadow-[0_1px_0_rgba(15,21,32,0.08)] py-3.5'
+          : 'bg-white/95 backdrop-blur-xl border-b border-[#0F1520]/8 shadow-sm py-3.5'
       }`}
     >
       {/* Scroll Progress Bar */}
