@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
       addressCountry: 'IN',
     },
     telephone: '+91-6351149073',
-    email: 'santosh.turbotech@gmail.com',
+    email: 'info@turbotechglobal.com',
     sameAs: [
       'https://www.linkedin.com/company/turbotech',
       'https://www.facebook.com/turbotech'

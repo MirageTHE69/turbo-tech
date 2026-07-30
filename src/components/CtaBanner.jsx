@@ -70,10 +70,10 @@ export default function CtaBanner({ onOpenQuote }) {
 
             {/* Email */}
             <a
-              href="mailto:santosh.turbotech@gmail.com"
+              href="mailto:info@turbotechglobal.com"
               className="block text-sm font-semibold text-white/70 hover:text-white transition-colors mb-8"
             >
-              santosh.turbotech@gmail.com
+              info@turbotechglobal.com
             </a>
 
             {/* CTA Button */}
