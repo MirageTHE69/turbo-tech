@@ -1,0 +1,30 @@
+export default function manifest() {
+  return {
+    name: 'Turbo Tech - Industrial Engineering & EPC Solutions',
+    short_name: 'Turbo Tech',
+    description: 'Turbo Tech delivers mechanical construction, fabrication, piping, plant maintenance & industrial manpower solutions across Kushinagar and UP.',
+    start_url: '/',
+    display: 'standalone',
+    background_color: '#ffffff',
+    theme_color: '#0F1520',
+    icons: [
+      {
+        src: '/favicon-48x48.png',
+        sizes: '48x48',
+        type: 'image/png',
+      },
+      {
+        src: '/android-chrome-192x192.png',
+        sizes: '192x192',
+        type: 'image/png',
+        purpose: 'any maskable',
+      },
+      {
+        src: '/android-chrome-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+        purpose: 'any maskable',
+      },
+    ],
+  };
+}
