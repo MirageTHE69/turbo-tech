@@ -35,8 +35,8 @@ export default function Hero({ onOpenQuote }) {
 
   const stats = [
     { number: '13+',  label: 'Years Experience'    },
-    { number: '150+', label: 'Projects Delivered'  },
-    { number: '150+', label: 'Certified Workforce' },
+    { number: '70+',  label: 'Projects Delivered'  },
+    { number: '450+', label: 'Certified Workforce' },
   ];
 
   // ── Force autoplay on mobile ──────────────────────────────

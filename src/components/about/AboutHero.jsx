@@ -46,8 +46,8 @@ export default function AboutHero() {
             <div className="ah-anim flex items-stretch border border-[#E2DDD8] w-fit opacity-0">
               {[
                 { n: '13+',  l: 'Years Active'         },
-                { n: '150+', l: 'Projects Delivered'    },
-                { n: '150+', l: 'Certified Technicians' },
+                { n: '70+',  l: 'Projects Delivered'    },
+                { n: '450+', l: 'Certified Technicians' },
                 { n: '100%', l: 'HSE Commitment'        },
               ].map((s, i) => (
                 <div key={i} className={`px-5 py-4 ${i < 3 ? 'border-r border-[#E2DDD8]' : ''}`}>

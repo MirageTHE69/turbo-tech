@@ -66,7 +66,7 @@ export default function Footer() {
               <p className="text-white/40 text-xs mb-2 uppercase tracking-widest font-semibold">Branch Office</p>
               <p className="text-xs sm:text-sm text-white/60 leading-relaxed">
                 Bajwa, Vadodara,<br />
-                Gujarat, India
+                Gujarat, India – 391310
               </p>
             </div>
           </div>
@@ -152,7 +152,7 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 text-[#E31E24] shrink-0 mt-0.5" />
                 <span className="text-xs sm:text-sm leading-relaxed text-white/35">
                   <strong>Head:</strong> Kushinagar, UP – 274407<br />
-                  <strong>Branch:</strong> Bajwa, Vadodara, Gujarat
+                  <strong>Branch:</strong> Bajwa, Vadodara, Gujarat – 391310
                 </span>
               </li>
               <li className="flex items-center gap-3">

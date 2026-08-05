@@ -8,7 +8,6 @@ import Header from '@/components/Header';
 import AboutHero from '@/components/about/AboutHero';
 import OurStory from '@/components/about/OurStory';
 import OurValues from '@/components/about/OurValues';
-import FounderMessage from '@/components/about/FounderMessage';
 import CtaBanner from '@/components/CtaBanner';
 import Footer from '@/components/Footer';
 import QuoteModal from '@/components/QuoteModal';
@@ -36,8 +35,6 @@ export default function AboutClient() {
       {/* Our Values Dark Section */}
       <OurValues />
 
-      {/* Founder Message & Signature */}
-      <FounderMessage />
 
       {/* Call To Action Banner */}
       <CtaBanner onOpenQuote={() => setIsQuoteOpen(true)} />

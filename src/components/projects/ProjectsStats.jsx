@@ -4,9 +4,9 @@ import React from 'react';
 
 const stats = [
   { value: '13+',  label: 'Years Industry Track Record', sub: 'Established 2011' },
-  { value: '150+', label: 'Projects Completed',        sub: 'Pan-India Delivery'     },
+  { value: '70+',  label: 'Projects Completed',        sub: 'Pan-India Delivery'     },
   { value: '100%', label: 'Safety & ISO Compliance',    sub: 'Zero High-Risk Incidents' },
-  { value: '150+', label: 'Certified Workforce',       sub: 'Deployable Nationwide' },
+  { value: '450+', label: 'Certified Workforce',       sub: 'Deployable Nationwide' },
 ];
 
 export default function ProjectsStats() {

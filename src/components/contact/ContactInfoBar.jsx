@@ -12,7 +12,7 @@ const cards = [
   {
     title: 'Branch Office',
     icon: MapPin,
-    lines: ['Bajwa, Vadodara,', 'Gujarat, India'],
+    lines: ['Bajwa, Vadodara,', 'Gujarat, India – 391310'],
   },
   {
     title: 'Phone & Email',

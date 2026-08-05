@@ -10,8 +10,8 @@ if (typeof window !== 'undefined') {
 
 const stats = [
   { target: 13, suffix: '+', label: 'Years of Industry Experience', sub: 'Since 2011' },
-  { target: 150, suffix: '+', label: 'Projects Delivered', sub: 'Across India' },
-  { target: 150, suffix: '+', label: 'Certified Workforce', sub: 'Trained In-House' },
+  { target: 70, suffix: '+', label: 'Projects Delivered', sub: 'Across India' },
+  { target: 450, suffix: '+', label: 'Certified Workforce', sub: 'Trained In-House' },
 ];
 
 export default function StatsCounter() {

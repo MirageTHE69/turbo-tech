@@ -6,7 +6,7 @@ import { ArrowRight, CheckCircle } from 'lucide-react';
 const pillars = [
   'End-to-end EPC execution across India',
   'ISO 9001:2015 certified processes',
-  'In-house certified workforce of 150+',
+  'In-house certified workforce of 450+',
 ];
 
 export default function AboutSection() {
@@ -104,7 +104,7 @@ export default function AboutSection() {
                 </div>
                 <div className="bg-[#E31E24] px-4 py-3 sm:px-5 sm:py-3.5 shadow-xl text-white">
                   <div className="text-2xl sm:text-3xl font-black font-outfit leading-none">
-                    150+
+                    70+
                   </div>
                   <div className="text-[10px] sm:text-[11px] font-bold mt-1 uppercase tracking-wide opacity-90">
                     Projects Done
